@@ -1,0 +1,256 @@
+% vim: set ts=4 spell spelllang=el encoding=iso-8859-7:
+\documentclass{beamer}
+
+% setup latex
+\usepackage[english, greek]{babel}
+\usepackage[iso-8859-7]{inputenc}
+\usepackage{multirow}
+
+\newcommand{\en}[1]{\textlatin{#1}}
+\newcommand{\gr}[1]{\textgreek{#1}}
+
+% setup beamer
+\xdefinecolor{darkorange}{rgb}{0.82,0.44,0.04}
+\xdefinecolor{brightorange}{rgb}{0.93,0.77,0.09}
+\beamertemplateshadingbackground{brightorange}{darkorange}
+\setbeamertemplate{frametitle}[default][center]
+
+\usefonttheme{structuresmallcapsserif}
+\setbeamertemplate{sidebar left}{
+  \vskip1.5mm%
+  {\hskip1mm\includegraphics[width=8mm]{scummvm_icon_big}}% Add logo at the top left
+}
+\setbeamertemplate{sidebar right}{
+  \vskip3mm%
+  \llap{\includegraphics[width=20mm]{scummvm_logo}\hskip1mm}% Add logo at the top right
+}
+\setbeamertemplate{footline}[text line]{%
+  \begin{beamercolorbox}[ht=2.5ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}%
+    \insertshorttitle%
+  \end{beamercolorbox}%
+  % FIXME: If I decrease the makebox width, the logo shifts to the *left* ?????
+ {\makebox[9mm][r]{\includegraphics[width=10mm]{scummvm_logo}}}% Add the logo at the bottom
+}
+\setbeamercolor{frametitle}{fg=white}
+%\setbeamercolor{normal text}{fg=blue!30!black}
+\setbeamercolor{itemize item}{fg=red!75!violet!70!black}
+\setbeamercolor{itemize subitem}{fg=red!75!violet!70!black}
+\setbeamercolor{itemize subsubitem}{fg=red!75!violet!70!black}
+\setbeamercolor{enumerate item}{fg=red!75!violet!70!black}
+\setbeamercolor{enumerate subitem}{fg=red!75!violet!70!black}
+%\setbeamertemplate{blocks}[rounded][shadow=true]
+
+\xdefinecolor{titlered}{rgb}{0.65,0.15,0.04}
+\setbeamercolor{block title}{use=structure,fg=white,bg=titlered}
+\xdefinecolor{boxgray}{rgb}{0.85,0.85,0.85}
+\setbeamercolor{block body}{use=structure,fg=black,bg=boxgray}
+
+\newcommand{\scummboxstart}[1]{\begin{beamerboxesrounded}[upper=block title,lower=block body,shadow=true]{\usebeamerfont*{block title}#1}}
+\newcommand{\scummboxend}{\end{beamerboxesrounded}}
+
+% setup titlepage
+%\titlegraphic{\includegraphics[width=7cm]{scummvm_logo}}
+\title[4$^ο$ Συνέδριο ΕΛ/ΛΑΚ, ΕΜΠ, Πολυτεχνειούπολη Ζωγράφου]{\includegraphics[width=7cm]{scummvm_logo}}
+%\title[4$^ο$ Συνέδριο ΕΛ/ΛΑΚ, ΕΜΠ, Πολυτεχνειούπολη Ζωγράφου]{ScummVM}
+%\logo{\includegraphics[width=1.2cm]{scummvm_logo}}
+\author{Κώστας Νάκος}
+\institute{
+	\en{Windows CE port maintainer}\\
+	---\\
+	\en{http://www.scummvm.org}\\
+	\en{jubanka@scummvm.org}
+}
+\date{20 June 2009}
+
+% go
+\begin{document}
+
+\beamertemplateshadingbackground{brightorange}{darkorange}
+\begin{frame}%[plain]
+  \titlepage
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{\textbf{Τί Είναι\en{;}}}
+
+\scummboxstart{\en{ScummVM}}
+\begin{itemize}
+\item Συλλογή Εικονικών Μηχανών (\en{Virtual Machine -- VM}) για περιπέτειες
+	  με γραφικά (\en{graphic adventures})
+\item Περιπέτειες: Παιχνίδια διαδραστικής πλοκής με επίλυση γρίφων
+\end{itemize}
+\scummboxend
+
+\vskip 0.2cm
+\includegraphics[width=0.4\paperwidth]{monkey}
+\vskip -0.25\paperwidth \hskip 2.5cm
+\includegraphics[width=0.4\paperwidth]{ft}
+\vskip -0.25\paperwidth \hskip 5.5cm
+\includegraphics[width=0.4\paperwidth]{loom}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{\textbf{Ιστορική Αναδρομή}}
+
+\scummboxstart{Από το Κείμενο στα Γραφικά}
+\begin{itemize}
+\item 1975 : ``\en{Adventure}''\hfill(Κείμενο)
+\item Τέλη '70 - Μέσα '80 : \en{Infocom, Magnetic Scrolls $\ldots$}\hfill(Κείμενο)
+\item Μέσα '80 - Μέσα '90 : \en{Lucasarts, Sierra, Revolution $\ldots$\hfill(2D)}
+\item Μέσα '90 - Σήμερα : \en{Telltale, Revolution $\ldots$\hfill(3D)}
+\end{itemize}
+\scummboxend
+
+\vskip 0.2cm
+\scummboxstart{Εικονικές Μηχανές}
+\begin{itemize}
+\item Ελαχιστοποίηση μνήμης
+\item Επαναλαμβανόμενα μοτίβα
+\item Εύκολη μετατροπή (\en{porting})
+\item Παραδείγματα:
+\begin{itemize}
+\item \en{Infocom $\rightarrow$ Z-machine}
+\item \en{Lucasarts $\rightarrow$ SCUMM}
+\item \en{Sierra $\rightarrow$ AGI, SCI}
+\end{itemize}
+\end{itemize}
+\scummboxend
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{\textbf{Στοιχεία \en{ScummVM} (1/2)}}
+
+\scummboxstart{Γιατί \en{ScummVM}\en{;}}
+\begin{itemize}
+\item \en{ScummVM is \emph{not} an emulator!}
+\item Διατήρηση/Τεκμηρίωση
+\item Βελτίωση:
+\begin{itemize}
+\item Διόρθωση σφαλμάτων στο αρχικό
+\item Σύγχρονες πλατφόρμες
+\item Βελτίωση γραφικών/ήχου
+\end{itemize}
+\item Βελτιστοποιημένη υλοποίηση
+\end{itemize}
+\scummboxend
+
+\vskip 0.3cm
+\scummboxstart{Μηχανές}
+\begin{itemize}
+\item Ανάπτυξη: \en{Reverse Engineering} ή από πηγαίο κώδικα
+\item 23 μηχανές, π.χ.:
+\begin{itemize}
+\item \en{AGI, AGOS, Gob, SAGA, SCUMM, Sky, Sword1, Sword2}
+\end{itemize}
+\end{itemize}
+\scummboxend
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{\textbf{Στοιχεία \en{ScummVM} (2/2)}}
+
+\scummboxstart{\en{Ports}}
+\begin{itemize}
+\item Σχετικά ελαφρύς φόρτος $\Rightarrow$ Περισσότερα \en{ports}
+\item \en{C++}: όχι \en{exceptions}, \en{RTTI} ή \en{STL}
+\item \en{Endian safety}
+\item 13 πλατφόρμες, π.χ.:
+\begin{itemize}
+\item \en{Palm OS, Nintendo DS, iPhone, PSP, Wii, WinCE ;-)}
+\end{itemize}
+\end{itemize}
+\scummboxend
+
+\vskip 0.3cm
+\scummboxstart{Στατιστικά}
+\begin{itemize}
+\item $\approx$ 800.000 γραμμές κώδικα
+\item 45 ενεργοί \en{developers} (65 σύνολο)
+\item 100.000 \en{downloads} ανά μήνα
+\item Τρίτη χρονιά συμμετοχής στο \en{Google Summer of Code}
+\item Στενή συνεργασία με εταιρείες παιχνιδιών (π.χ. \en{Revolution})
+\end{itemize}
+\scummboxend
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{\textbf{Αρχιτεκτονική}}
+
+\scummboxstart{Διάγραμμα Αρχιτεκτονικής}
+\centering{ \framebox{\LARGE\en{Engine}} $\leftrightarrows$ \framebox{\LARGE\en{OSystem}} }
+\scummboxend
+
+\vskip 0.3cm
+\centering{
+\begin{tabular}{@{} lr @{}}
+\begin{minipage}{0.4\paperwidth}
+\scummboxstart{\en{Engine class}}
+\begin{itemize}
+\item \en{Subclassed} από μηχανές
+\item Υλοποιεί την εικονική μηχανή
+\item Καλεί μεθόδους του \en{OSystem}
+\item Υποκαθιστά κλήσεις προς το λειτουργικό της αρχικής μηχανής
+\end{itemize}
+\scummboxend
+\end{minipage}
+&
+\multirow{1}{*}[2.2cm]{
+\begin{minipage}{0.4\paperwidth}
+\scummboxstart{\en{OSystem class}}
+\begin{itemize}
+\item \en{Backend}
+\item \en{OS interface code}
+\item Χειρίζεται:
+\begin{itemize}
+\item Γραφικά
+\item Ήχο
+\item \en{Mouse}
+\end{itemize}
+\end{itemize}
+\scummboxend
+\end{minipage}
+}
+\end{tabular}
+}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{\textbf{Ομάδα}}
+
+\scummboxstart{Οργάνωση Ομάδας}
+\begin{itemize}
+\item Δύο (πρώην τρεις) αρχηγοί
+\begin{itemize}
+\item Ένας \en{release manager} και ένας κύριος αρχιτέκτονας
+\end{itemize}
+\item Ανάπτυξη μηχανών
+\item \en{Porters}
+\item Βοηθητικές υπηρεσίες
+\begin{itemize}
+\item \en{Webmaster}
+\item Συγγραφείς τεκμηρίωσης (\en{Wiki, manual})
+\end{itemize}
+\end{itemize}
+\scummboxend
+
+\end{frame}
+
+\end{document}
