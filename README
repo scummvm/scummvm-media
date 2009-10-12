@@ -1,10 +1,9 @@
-This directory contains SVG versions of the ScummVM logo and icon. Also,
-Photoshop file with the ScummVM logo is provided.
+This directory contains the ScummVM logo and icon.
 
-[TODO: State who created the logo.]
-[TODO: Create a version of the logo with the "s" as upper case?]
+The 'original' subdirectory contains the design files in Photoshop and
+SVG versions.
 
-Smaller versions of the logo in .ico, .png and .xpm format are also
+Smaller versions of the icon in .ico, .png and .xpm format are also
 provided for convenience; these can be regenerated from the SVG versions
 with the included Makefile.
 
@@ -15,4 +14,6 @@ Max Horn tweaked it a bit to allow displaying our logo on every slide.
 
 [TODO: Turn the beamer slides into a template, plus an *english* :)
   example presentation.]
- 
+[TODO: Update the .pdf file with the new version of the logo]
+[TODO: Update the "original" SVGs so we can automatically generate the
+  .png from them]

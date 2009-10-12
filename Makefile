@@ -1,17 +1,24 @@
-GENERATED_IMAGES=scummvm_icon_big.png scummvm_16.png scummvm_32.png scummvm_128.png scummvm.xpm scummvm.ico
+GENERATED_IMAGES=$(foreach icon, scummvm_icon scummvm_tools_icon, $(foreach size, 16 32 128, $(icon)_$(size).png)) scummvm_icon.png scummvm_icon.xpm scummvm_icon.ico scummvm_icon_16.ico scummvm_icon_32.ico
+ICON_BIG=512
 
-icons: $(GENERATED_IMAGES)
+all: $(GENERATED_IMAGES)
 
-scummvm_icon_big.png: scummvm_icon.svg
-	inkscape -e $@ -w 256 -h 256 $<
+# MAIN ICON
 
-scummvm_%.png: scummvm_icon_big.png
+#TODO: Update the SVG
+#scummvm_icon_$(ICON_BIG).png: originals/scummvm_icon.svg
+#	inkscape -e $@ -w $(ICON_BIG) -h $(ICON_BIG) $<
+
+scummvm_icon_%.png: scummvm_icon.png
 	convert $< -resize $*x$* $@
 
-scummvm.xpm: scummvm_icon_big.png
+scummvm_icon_%.ico: scummvm_icon.png
+	convert $< -resize $*x$* $@
+
+scummvm_icon.xpm: scummvm_icon.png
 	convert $< -resize 32x32 $@
 
-scummvm.ico: scummvm_icon_big.png
+scummvm_icon.ico: scummvm_icon.png
 	convert $< \
 		\( -clone 0 -resize 32x32 -colors 16 \) \
 		\( -clone 0 -resize 16x16 -colors 16 \) \
@@ -25,7 +32,17 @@ scummvm.ico: scummvm_icon_big.png
 		-delete 0 \
 		$@
 
+# TOOLS ICON
+
+scummvm_tools_icon_%.png: scummvm_tools_icon.png
+	convert $< -resize $*x$* $@
+
+# LOGO
+
+# For the PSP:
+#convert scummvm_logo.png -resize 150 icon0.png
+
 clean:
 	rm -f $(GENERATED_IMAGES)
 
-.PHONY: icons clean
+.PHONY: all clean

@@ -1,0 +1,18 @@
+ScummVM Brand Package 2009
+==========================
+by Jean Marc Gimenez
+
+Contents:
+
+- New ScummVM logo .psd
+- New ScummVM logo .svg
+- ScummVM icons .psd
+
+Notes
+-----
+The font used in the ScummVM logo is the bold variant of
+'Billy' by David Buck of New Zealand type foundry Sparkytype.
+
+The tools badge is a slightly modified version of Andy's
+"Tools, Hammer, Spanner" from openclipart.org
+(http://openclipart.org/cchost/media/files/Andy/67)
