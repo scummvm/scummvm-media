@@ -1,5 +1,5 @@
 REPOSITORY_IMAGES=$(foreach icon, scummvm_icon scummvm_tools_icon, $(foreach size, 16 32 128, $(icon)_$(size).png)) scummvm_icon.png scummvm_icon.xpm scummvm_icon.ico scummvm_icon_16.ico scummvm_icon_32.ico
-PORTS_IMAGES=scummvm_icon_18.png scummvm_icon_48.png scummvm_icon_dc.h scummvm_icon_moto32.png scummvm_icon_moto48.png $(foreach size, 16 18 32 40 64, scummvm_icon_symbian$(size).bmp scummvm_icon_symbian$(size)m.bmp) scummvm_logo_psp.png scummvm_logo_wii.png scummvm_logo_wince.bmp
+PORTS_IMAGES=scummvm_icon_18.png scummvm_icon_48.png scummvm_icon_dc.h scummvm_icon_moto32.png scummvm_icon_moto48.png $(foreach size, 16 18 32 40 64, scummvm_icon_symbian$(size).bmp scummvm_icon_symbian$(size)m.bmp) scummvm_iphone_icon.png scummvm_iphone_loading.png scummvm_logo_psp.png scummvm_logo_wii.png scummvm_logo_wince.bmp
 ICON_BIG=512
 
 all: $(REPOSITORY_IMAGES)
@@ -84,6 +84,12 @@ scummvm_icon_symbian64.bmp: scummvm_icon.png
 scummvm_icon_symbian64m.bmp: scummvm_icon.png
 	convert $< -resize 64x64 -alpha extract -threshold 0 ppm:- | ppmtobmp - -bpp 4 > $@
 
+scummvm_iphone_icon.png: derivate/scummvm_iphone_icon.svg scummvm_icon.png
+	inkscape -e $@ $<
+
+scummvm_iphone_loading.png: derivate/scummvm_iphone_loading.svg scummvm_logo.png
+	inkscape -e $@ $<
+
 scummvm_logo_psp.png: scummvm_logo.png
 	convert $< -resize 150 $@
 
@@ -113,6 +119,8 @@ update-trunk: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_32.ico scummvm_icon
 	cp scummvm_icon_symbian64m.bmp ../../scummvm/trunk/backends/platform/symbian/res/scummxLargeMask.bmp
 	cp scummvm_logo_wince.bmp      ../../scummvm/trunk/backends/platform/wince/images/panelbig.bmp
 	cp scummvm_icon_32.ico         ../../scummvm/trunk/backends/platform/wince/images/scumm_icon.ico
+	cp scummvm_iphone_loading.png  ../../scummvm/trunk/dists/iphone/Default.png
+	cp scummvm_iphone_icon.png     ../../scummvm/trunk/dists/iphone/icon.png
 	cp scummvm_icon_moto48.png     ../../scummvm/trunk/dists/motoezx/scummvm.png
 	cp scummvm_icon_moto32.png     ../../scummvm/trunk/dists/motoezx/scummvm-sm.png
 	cp scummvm_icon_48.png         ../../scummvm/trunk/dists/motomagx/mgx/icon.png

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="320"
+   height="460"
+   id="svg3289"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   version="1.0"
+   sodipodi:docname="iphone_loading.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   style="display:inline">
+  <defs
+     id="defs3291">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3915">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.702"
+         offset="0"
+         id="stop3917" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3919" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3915"
+       id="linearGradient3921"
+       x1="241.93153"
+       y1="-68.309784"
+       x2="226.77419"
+       y2="225.64461"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       inkscape:collect="always"
+       id="filter4561"
+       x="-0.073075317"
+       width="1.1461506"
+       y="-0.33532795"
+       height="1.6706558">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="3.5156494"
+         id="feGaussianBlur4563" />
+    </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3915"
+       id="linearGradient4740"
+       x1="160"
+       y1="460"
+       x2="160"
+       y2="367.47662"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,1.6363635,0,-199.72727)" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="125.88584"
+     inkscape:cy="224.05556"
+     inkscape:document-units="px"
+     inkscape:current-layer="capa1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="725"
+     inkscape:window-x="0"
+     inkscape:window-y="25" />
+  <metadata
+     id="metadata3294">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Background"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <rect
+       style="opacity:1;color:#000000;fill:#d16e09;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3925"
+       width="320"
+       height="460"
+       x="0"
+       y="0"
+       ry="0"
+       rx="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Loading shadow"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <text
+       xml:space="preserve"
+       style="font-size:26px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4561);font-family:Bitstream Vera Sans"
+       x="175"
+       y="244"
+       id="text4483"><tspan
+         sodipodi:role="line"
+         id="tspan4485"
+         x="175"
+         y="244"
+         style="font-weight:normal;fill:#000000;fill-opacity:1;-inkscape-font-specification:Bitstream Vera Sans">...loading</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Loading"
+     sodipodi:insensitive="true"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-size:26px;font-style:normal;font-weight:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="173"
+       y="242"
+       id="text3929"><tspan
+         sodipodi:role="line"
+         id="tspan3931"
+         x="173"
+         y="242"
+         style="font-weight:normal;fill:#ffffff;fill-opacity:1;-inkscape-font-specification:Bitstream Vera Sans">...loading</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Logo"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <image
+       y="101.51912"
+       x="6.8217773"
+       id="image4719"
+       height="90.584358"
+       width="310.02991"
+       sodipodi:absref="../scummvm_logo.png"
+       xlink:href="../scummvm_logo.png" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="Brightness bottom"
+     sodipodi:insensitive="true">
+    <rect
+       style="opacity:0.70200004;color:#000000;fill:url(#linearGradient4740);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect4724"
+       width="320"
+       height="162"
+       x="0"
+       y="391" />
+  </g>
+  <g
+     inkscape:label="Brightness top"
+     inkscape:groupmode="layer"
+     id="capa1"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <path
+       style="fill:url(#linearGradient3921);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M -92.934034,240.7969 C -24.24366,181.1979 331.33004,148.87301 407.09148,147.86286 C 373.75644,14.522724 380.62075,-27.774848 156.57364,-54.167646 C -45.296121,-33.715374 -91.835481,4.0088722 -92.934034,240.7969 z"
+       id="path3404"
+       sodipodi:nodetypes="cccc" />
+  </g>
+</svg>
