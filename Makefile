@@ -1,5 +1,5 @@
 REPOSITORY_IMAGES=$(foreach icon, scummvm_icon scummvm_tools_icon, $(foreach size, 16 32 128, $(icon)_$(size).png)) scummvm_icon.png scummvm_icon.xpm scummvm_icon.ico scummvm_icon_16.ico scummvm_icon_32.ico
-PORTS_IMAGES=scummvm_icon_18.png scummvm_icon_48.png scummvm_icon_dc.h scummvm_icon_moto32.png scummvm_icon_moto48.png $(foreach size, 16 18 32 40 64, scummvm_icon_symbian$(size).bmp scummvm_icon_symbian$(size)m.bmp) scummvm_iphone_icon.png scummvm_iphone_loading.png scummvm_logo_psp.png scummvm_logo_wii.png scummvm_wince_bar.bmp scummvm_wince_bar.png
+PORTS_IMAGES=scummvm_icon_18.png scummvm_icon_48.png scummvm_icon_dc.h scummvm_icon_moto32.png scummvm_icon_moto48.png $(foreach size, 16 18 32 40 64, scummvm_icon_symbian$(size).bmp scummvm_icon_symbian$(size)m.bmp) scummvm_iphone_icon.png scummvm_iphone_loading.png scummvm_logo_psp.png scummvm_logo_wii.png scummvm_web_link.png scummvm_wince_bar.bmp scummvm_wince_bar.png
 ICON_BIG=512
 
 all: $(REPOSITORY_IMAGES)
@@ -96,6 +96,9 @@ scummvm_logo_psp.png: scummvm_logo.png
 scummvm_logo_wii.png: scummvm_logo.png
 	convert $< -resize 128x48 -gravity Center -background none -extent 128x48 $@
 
+scummvm_web_link.png: derivate/scummvm_web_link.svg
+	inkscape -e $@ $<
+
 scummvm_wince_bar.bmp: scummvm_wince_bar.png
 	@#TODO: Can 'convert' write indexed BMPs directly?
 	convert $< -colors 256 ppm:- | ppmtobmp - -bpp 8 > $@
@@ -103,7 +106,7 @@ scummvm_wince_bar.bmp: scummvm_wince_bar.png
 scummvm_wince_bar.png: derivate/scummvm_wince_bar.svg
 	inkscape -e $@ $<
 
-update-trunk: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_32.ico scummvm_icon_32.png $(PORTS_IMAGES)
+update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_32.ico scummvm_icon_32.png $(PORTS_IMAGES)
 	cp scummvm_icon_dc.h           ../../scummvm/trunk/backends/platform/dc/deficon.h
 	cp scummvm_icon_32.png         ../../scummvm/trunk/backends/platform/gp2x/build/scummvm.png
 	cp scummvm_icon_32.png         ../../scummvm/trunk/backends/platform/gp2xwiz/build/scummvm.png
@@ -133,11 +136,12 @@ update-trunk: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_32.ico scummvm_icon
 	cp scummvm_icon.ico            ../../scummvm/trunk/icons/scummvm.ico
 	cp originals/scummvm_icon.svg  ../../scummvm/trunk/icons/scummvm.svg
 	cp scummvm_icon.xpm            ../../scummvm/trunk/icons/scummvm.xpm
-
-clean-ports:
-	rm -f $(PORTS_IMAGES)
+	cp scummvm_web_link.png        ../../web/trunk/images/scummvm-link.png
 
 clean:
+	rm -f $(PORTS_IMAGES)
+
+clean-all: clean
 	rm -f $(REPOSITORY_IMAGES)
 
-.PHONY: all clean update-trunk
+.PHONY: all clean clean-all update
