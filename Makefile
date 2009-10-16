@@ -1,5 +1,5 @@
 REPOSITORY_IMAGES=$(foreach icon, scummvm_icon scummvm_tools_icon, $(foreach size, 16 32 128, $(icon)_$(size).png)) scummvm_icon.png scummvm_icon.xpm scummvm_icon.ico scummvm_icon_16.ico scummvm_icon_32.ico
-PORTS_IMAGES=scummvm_icon_18.png scummvm_icon_48.png scummvm_icon_dc.h scummvm_icon_moto32.png scummvm_icon_moto48.png $(foreach size, 16 18 32 40 64, scummvm_icon_symbian$(size).bmp scummvm_icon_symbian$(size)m.bmp) scummvm_iphone_icon.png scummvm_iphone_loading.png scummvm_logo_psp.png scummvm_logo_wii.png scummvm_logo_wince.bmp
+PORTS_IMAGES=scummvm_icon_18.png scummvm_icon_48.png scummvm_icon_dc.h scummvm_icon_moto32.png scummvm_icon_moto48.png $(foreach size, 16 18 32 40 64, scummvm_icon_symbian$(size).bmp scummvm_icon_symbian$(size)m.bmp) scummvm_iphone_icon.png scummvm_iphone_loading.png scummvm_logo_psp.png scummvm_logo_wii.png scummvm_wince_bar.bmp scummvm_wince_bar.png
 ICON_BIG=512
 
 all: $(REPOSITORY_IMAGES)
@@ -96,10 +96,12 @@ scummvm_logo_psp.png: scummvm_logo.png
 scummvm_logo_wii.png: scummvm_logo.png
 	convert $< -resize 128x48 -gravity Center -background none -extent 128x48 $@
 
-scummvm_logo_wince.bmp: scummvm_logo.png
+scummvm_wince_bar.bmp: scummvm_wince_bar.png
 	@#TODO: Can 'convert' write indexed BMPs directly?
-	convert $< -resize 320x40 -gravity East -background black -extent 320x40 -colors 256 ppm:- | ppmtobmp - -bpp 8 > $@
+	convert $< -colors 256 ppm:- | ppmtobmp - -bpp 8 > $@
 
+scummvm_wince_bar.png: derivate/scummvm_wince_bar.svg
+	inkscape -e $@ $<
 
 update-trunk: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_32.ico scummvm_icon_32.png $(PORTS_IMAGES)
 	cp scummvm_icon_dc.h           ../../scummvm/trunk/backends/platform/dc/deficon.h
@@ -117,7 +119,7 @@ update-trunk: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_32.ico scummvm_icon
 	cp originals/scummvm_icon.svg  ../../scummvm/trunk/backends/platform/symbian/res/scummvm.svg
 	cp scummvm_icon_symbian64.bmp  ../../scummvm/trunk/backends/platform/symbian/res/scummxLarge.bmp
 	cp scummvm_icon_symbian64m.bmp ../../scummvm/trunk/backends/platform/symbian/res/scummxLargeMask.bmp
-	cp scummvm_logo_wince.bmp      ../../scummvm/trunk/backends/platform/wince/images/panelbig.bmp
+	cp scummvm_wince_bar.bmp       ../../scummvm/trunk/backends/platform/wince/images/panelbig.bmp
 	cp scummvm_icon_32.ico         ../../scummvm/trunk/backends/platform/wince/images/scumm_icon.ico
 	cp scummvm_iphone_loading.png  ../../scummvm/trunk/dists/iphone/Default.png
 	cp scummvm_iphone_icon.png     ../../scummvm/trunk/dists/iphone/icon.png

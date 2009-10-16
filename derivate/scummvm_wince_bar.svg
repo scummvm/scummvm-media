@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="320"
+   height="40"
+   id="svg3289"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   version="1.0"
+   sodipodi:docname="scummvm_wince_bar.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   style="display:inline">
+  <defs
+     id="defs3291">
+    <filter
+       id="filter3166"
+       inkscape:label="Soft shadow">
+      <feGaussianBlur
+         stdDeviation="1"
+         id="feGaussianBlur3168" />
+    </filter>
+    <filter
+       id="filter3201"
+       inkscape:label="Specular background"
+       width="1.04"
+       x="-0.02"
+       y="-0.02"
+       height="1.04">
+      <feGaussianBlur
+         stdDeviation="0.5"
+         id="feGaussianBlur3265"
+         result="result1" />
+      <feDiffuseLighting
+         id="feDiffuseLighting3249"
+         diffuseConstant="0.99999999999999967"
+         kernelUnitLength="0.01"
+         surfaceScale="-2"
+         result="result0"
+         lighting-color="rgb(178,178,178)">
+        <feDistantLight
+           id="feDistantLight3251"
+           azimuth="90"
+           elevation="10" />
+      </feDiffuseLighting>
+      <feBlend
+         blend="normal"
+         id="feBlend3263"
+         mode="lighten"
+         in2="SourceGraphic"
+         result="result2" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5475">
+      <rect
+         transform="translate(6e-5,-3.06e-4)"
+         clip-path="url(#clipPath2712)"
+         ry="9.9894247"
+         y="0.48030549"
+         x="2.2319486"
+         height="56.5"
+         width="194.32683"
+         id="use5477"
+         style="opacity:1;color:#000000;fill:#c26e18;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;filter:url(#filter3201);enable-background:accumulate" />
+    </clipPath>
+    <linearGradient
+       id="linearGradient3173">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.74096388"
+         offset="0"
+         id="stop3175" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.01807229"
+         offset="1"
+         id="stop3177" />
+    </linearGradient>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath2712">
+      <rect
+         ry="9.9894247"
+         y="0.48030454"
+         x="2.2319541"
+         height="56.5"
+         width="194.32683"
+         id="rect2714"
+         style="opacity:1;color:#000000;fill:#bd6308;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3498">
+      <rect
+         transform="translate(6e-5,-3.06e-4)"
+         clip-path="url(#clipPath2712)"
+         ry="9.9894247"
+         y="0.48030549"
+         x="2.2319486"
+         height="56.5"
+         width="194.32683"
+         id="use3500"
+         style="opacity:1;color:#000000;fill:#c26e18;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;filter:url(#filter3201);enable-background:accumulate" />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3173"
+       id="linearGradient3547"
+       gradientUnits="userSpaceOnUse"
+       x1="99.395424"
+       y1="72.492607"
+       x2="99.395424"
+       y2="44.005211" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3173"
+       id="linearGradient3549"
+       gradientUnits="userSpaceOnUse"
+       x1="92.00029"
+       y1="-10.394801"
+       x2="93.891121"
+       y2="27.288023" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="4"
+     inkscape:cx="170.49026"
+     inkscape:cy="18.828394"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer10"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="725"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata3294">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Background"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <rect
+       style="opacity:1;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3925"
+       width="320"
+       height="40"
+       x="0"
+       y="0"
+       ry="0"
+       rx="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Icon"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <g
+       inkscape:groupmode="layer"
+       id="layer10"
+       inkscape:label="Shadow"
+       style="display:inline"
+       sodipodi:insensitive="true">
+      <rect
+         style="opacity:1;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;filter:url(#filter3166);enable-background:accumulate"
+         id="rect2394"
+         width="194.32689"
+         height="56.5"
+         x="124.22472"
+         y="3.3967185"
+         ry="9.9894247"
+         transform="matrix(0.641933,0,0,0.641933,114.56921,0.5873886)" />
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer9"
+       inkscape:label="Button"
+       style="display:inline">
+      <rect
+         style="opacity:1;color:#000000;fill:#c26e18;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;filter:url(#filter3201);enable-background:accumulate"
+         id="rect2867"
+         width="194.32683"
+         height="56.5"
+         x="2.2319486"
+         y="0.48030549"
+         ry="9.9894247"
+         clip-path="url(#clipPath2712)"
+         transform="matrix(0.641933,0,0,0.641933,192.88043,1.4966315)" />
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer8"
+       inkscape:label="Logo"
+       style="display:inline"
+       sodipodi:insensitive="true">
+      <image
+         style="display:inline"
+         y="1.6404433"
+         x="193.05246"
+         id="image4719"
+         height="37.081474"
+         width="126.91338"
+         sodipodi:absref="../scummvm_logo.png"
+         xlink:href="../scummvm_logo.png" />
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer7"
+       inkscape:label="Brightness"
+       style="display:inline"
+       sodipodi:insensitive="true">
+      <path
+         style="opacity:1;fill:url(#linearGradient3549);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline"
+         d="M 94.791006,31.530476 C 115.23741,31.592827 214.1109,17.935409 214.74662,13.852806 C 215.40153,9.6469689 197.64483,-13.960476 86.507755,-13.572836 C -21.800926,-13.195062 -8.6486154,12.893161 -8.6486155,17.817655 C -8.6486157,22.61588 74.218329,31.467739 94.791006,31.530476 z"
+         id="path3170"
+         sodipodi:nodetypes="czzzz"
+         clip-path="url(#clipPath5475)"
+         transform="matrix(0.641933,0,0,0.641933,192.88039,1.4968279)" />
+      <rect
+         style="opacity:0.70200004;color:#000000;fill:url(#linearGradient3547);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         id="rect2690"
+         width="200.69891"
+         height="15.677507"
+         x="-0.19388892"
+         y="44.005211"
+         clip-path="url(#clipPath3498)"
+         transform="matrix(0.641933,0,0,0.641933,192.88039,1.4968279)" />
+    </g>
+  </g>
+</svg>
