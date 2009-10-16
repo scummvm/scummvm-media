@@ -1,5 +1,5 @@
 REPOSITORY_IMAGES=$(foreach icon, scummvm_icon scummvm_tools_icon, $(foreach size, 16 32 128, $(icon)_$(size).png)) scummvm_icon.png scummvm_icon.xpm scummvm_icon.ico scummvm_icon_16.ico scummvm_icon_32.ico
-PORTS_IMAGES=scummvm_icon_18.png scummvm_icon_48.png scummvm_icon_dc.h scummvm_icon_moto32.png scummvm_icon_moto48.png $(foreach size, 16 18 32 40 64, scummvm_icon_symbian$(size).bmp scummvm_icon_symbian$(size)m.bmp) scummvm_iphone_icon.png scummvm_iphone_loading.png scummvm_logo_psp.png scummvm_logo_wii.png scummvm_web_link.png scummvm_wince_bar.bmp scummvm_wince_bar.png
+PORTS_IMAGES=scummvm_icon_18.png scummvm_icon_48.png scummvm_icon_50.png scummvm_icon_dc.h scummvm_icon_moto32.png scummvm_icon_moto48.png $(foreach size, 16 18 32 40 64, scummvm_icon_symbian$(size).bmp scummvm_icon_symbian$(size)m.bmp) scummvm_iphone_icon.png scummvm_iphone_loading.png scummvm_logo_psp.png scummvm_logo_wii.png scummvm_logo_wiki.png scummvm_web_link.png scummvm_wince_bar.bmp scummvm_wince_bar.png
 ICON_BIG=512
 
 all: $(REPOSITORY_IMAGES)
@@ -96,6 +96,9 @@ scummvm_logo_psp.png: scummvm_logo.png
 scummvm_logo_wii.png: scummvm_logo.png
 	convert $< -resize 128x48 -gravity Center -background none -extent 128x48 $@
 
+scummvm_logo_wiki.png: scummvm_logo.png
+	convert $< -resize 210x65 -gravity Center -background none -extent 200x58 $@
+
 scummvm_web_link.png: derivate/scummvm_web_link.svg
 	inkscape -e $@ $<
 
@@ -137,6 +140,7 @@ update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_32.ico scummvm_icon_32.pn
 	cp originals/scummvm_icon.svg  ../../scummvm/trunk/icons/scummvm.svg
 	cp scummvm_icon.xpm            ../../scummvm/trunk/icons/scummvm.xpm
 	cp scummvm_web_link.png        ../../web/trunk/images/scummvm-link.png
+	cp scummvm_icon_50.png         ../../web-planet/avatars/scummvm.png
 
 clean:
 	rm -f $(PORTS_IMAGES)
