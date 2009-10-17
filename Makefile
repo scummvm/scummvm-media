@@ -46,7 +46,7 @@ scummvm_icon_dc.h: scummvm_icon_dc.ico
 
 #FIXME: Doesn't show transparency, we create it with The GIMP until we find an automatic way to do it
 #scummvm_icon_dc.ico: scummvm_icon.png
-	@#convert $< -resize 32x32 -colors 16 $@
+	@#convert $< -resize 32x32 -colors 15 $@
 
 scummvm_icon_moto32.png: scummvm_icon.png
 	convert $< -resize 32x24 -gravity Center -background none -extent 32x24 $@
@@ -109,7 +109,7 @@ scummvm_wince_bar.bmp: scummvm_wince_bar.png
 scummvm_wince_bar.png: derivate/scummvm_wince_bar.svg
 	inkscape -e $@ $<
 
-update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_32.ico scummvm_icon_32.png $(PORTS_IMAGES)
+update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ico scummvm_icon_32.png $(PORTS_IMAGES)
 	cp scummvm_icon_dc.h           ../../scummvm/trunk/backends/platform/dc/deficon.h
 	cp scummvm_icon_32.png         ../../scummvm/trunk/backends/platform/gp2x/build/scummvm.png
 	cp scummvm_icon_32.png         ../../scummvm/trunk/backends/platform/gp2xwiz/build/scummvm.png
@@ -139,6 +139,7 @@ update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_32.ico scummvm_icon_32.pn
 	cp scummvm_icon.ico            ../../scummvm/trunk/icons/scummvm.ico
 	cp originals/scummvm_icon.svg  ../../scummvm/trunk/icons/scummvm.svg
 	cp scummvm_icon.xpm            ../../scummvm/trunk/icons/scummvm.xpm
+	cp scummvm_icon_16.ico         ../../web/trunk/favicon.ico
 	cp scummvm_web_link.png        ../../web/trunk/images/scummvm-link.png
 	cp scummvm_icon_50.png         ../../web-planet/avatars/scummvm.png
 
