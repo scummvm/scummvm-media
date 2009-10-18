@@ -1,5 +1,5 @@
 REPOSITORY_IMAGES=$(foreach icon, scummvm_icon scummvm_tools_icon, $(foreach size, 16 32 128, $(icon)_$(size).png)) scummvm_icon.png scummvm_icon.xpm scummvm_icon.ico scummvm_icon_16.ico scummvm_icon_32.ico
-PORTS_IMAGES=scummvm_icon_18.png scummvm_icon_48.png scummvm_icon_50.png scummvm_icon_dc.h scummvm_icon_moto32.png scummvm_icon_moto48.png $(foreach size, 16 18 32 40 64, scummvm_icon_symbian$(size).bmp scummvm_icon_symbian$(size)m.bmp) scummvm_iphone_icon.png scummvm_iphone_loading.png scummvm_logo_psp.png scummvm_logo_wii.png scummvm_logo_wiki.png scummvm_web_link.png scummvm_wince_bar.bmp scummvm_wince_bar.png
+PORTS_IMAGES=$(foreach site, buildbot forums planet wiki, scummvm_favicon_$(site).ico) scummvm_icon_18.png scummvm_icon_48.png scummvm_icon_50.png scummvm_icon_dc.h scummvm_icon_moto32.png scummvm_icon_moto48.png $(foreach size, 16 18 32 40 64, scummvm_icon_symbian$(size).bmp scummvm_icon_symbian$(size)m.bmp) scummvm_iphone_icon.png scummvm_iphone_loading.png scummvm_logo_psp.png scummvm_logo_wii.png scummvm_logo_wiki.png scummvm_web_link.png scummvm_wince_bar.bmp scummvm_wince_bar.png
 ICON_BIG=512
 
 all: $(REPOSITORY_IMAGES)
@@ -38,6 +38,9 @@ scummvm_tools_icon_%.png: scummvm_tools_icon.png
 	convert $< -resize $*x$* $@
 
 # PORT SPECIFIC IMAGES
+
+scummvm_favicon_%.ico: scummvm_icon_16.png derivate/scummvm_favicon_%.png
+	convert -composite $^ $@
 
 scummvm_icon_dc.h: scummvm_icon_dc.ico
 	echo "static const unsigned char scummvm_icon[] = {" > $@
