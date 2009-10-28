@@ -32,6 +32,9 @@ scummvm_icon.ico: scummvm_icon.png
 		-delete 0 \
 		$@
 
+scummvm_logo.pdf: scummvm_logo.png
+	convert $< $@
+
 # TOOLS ICON
 
 scummvm_tools_icon_%.png: scummvm_tools_icon.png
