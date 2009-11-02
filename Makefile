@@ -8,7 +8,7 @@ REPOSITORY_IMAGES = \
 	scummvm_logo.pdf
 
 PORTS_IMAGES = \
-	$(foreach site, buildbot doxygen forums planet wiki, scummvm_favicon_$(site).ico) \
+	$(foreach site, buildbot doxygen forums logs planet wiki, scummvm_favicon_$(site).ico) \
 	scummvm_icon_18.png \
 	scummvm_icon_48.png \
 	scummvm_icon_50.png \
