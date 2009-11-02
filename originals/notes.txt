@@ -16,3 +16,10 @@ The font used in the ScummVM logo is the bold variant of
 The tools badge is a slightly modified version of Andy's
 "Tools, Hammer, Spanner" from openclipart.org
 (http://openclipart.org/cchost/media/files/Andy/67)
+
+License
+-------
+Copyright (c) 2004,2009 by Jean Marc Gimenez. This work
+is made available under the terms of the Creative Commons
+Attribution-ShareAlike 3.0 license:
+http://creativecommons.org/licenses/by-sa/3.0/
