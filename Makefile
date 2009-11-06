@@ -31,8 +31,8 @@ all: $(REPOSITORY_IMAGES)
 
 # REPOSITORY IMAGES
 
-scummvm_icon.png: originals/scummvm_icon.svg
-	inkscape -e $@ -w $(ICON_BIG) -h $(ICON_BIG) $<
+#scummvm_icon.png: originals/scummvm_icon.svg
+#	inkscape -e $@ -w $(ICON_BIG) -h $(ICON_BIG) $<
 
 scummvm_icon_%.png: scummvm_icon.png
 	convert $< -resize $*x$* $@
@@ -154,7 +154,7 @@ update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ic
 	cp scummvm_icon_symbian32m.bmp ../../scummvm/trunk/backends/platform/symbian/res/scummLm.bmp
 	cp scummvm_icon_symbian40.bmp  ../../scummvm/trunk/backends/platform/symbian/res/scummLarge.bmp
 	cp scummvm_icon_symbian40m.bmp ../../scummvm/trunk/backends/platform/symbian/res/scummLargeMask.bmp
-	cp originals/scummvm_icon.svg  ../../scummvm/trunk/backends/platform/symbian/res/scummvm.svg
+	#cp originals/scummvm_icon.svg  ../../scummvm/trunk/backends/platform/symbian/res/scummvm.svg
 	cp scummvm_icon_symbian64.bmp  ../../scummvm/trunk/backends/platform/symbian/res/scummxLarge.bmp
 	cp scummvm_icon_symbian64m.bmp ../../scummvm/trunk/backends/platform/symbian/res/scummxLargeMask.bmp
 	cp scummvm_wince_bar.bmp       ../../scummvm/trunk/backends/platform/wince/images/panelbig.bmp
@@ -169,7 +169,7 @@ update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ic
 	cp scummvm_icon_18.png         ../../scummvm/trunk/dists/motomagx/pep/scummvm_small_usr.png
 	cp scummvm_logo_wii.png        ../../scummvm/trunk/dists/wii/icon.png
 	cp scummvm_icon.ico            ../../scummvm/trunk/icons/scummvm.ico
-	cp originals/scummvm_icon.svg  ../../scummvm/trunk/icons/scummvm.svg
+	#cp originals/scummvm_icon.svg  ../../scummvm/trunk/icons/scummvm.svg
 	cp scummvm_icon.xpm            ../../scummvm/trunk/icons/scummvm.xpm
 	cp scummvm_icon_16.ico         ../../web/trunk/favicon.ico
 	cp scummvm_web_link.png        ../../web/trunk/images/scummvm-link.png
