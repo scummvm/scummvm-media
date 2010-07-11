@@ -1,3 +1,8 @@
+# Install paths for the generated images
+SCUMMVM_PATH = "../../scummvm/trunk"
+WEB_PATH     = "../../web/trunk"
+PLANET_PATH  = "../../web-planet"
+
 REPOSITORY_IMAGES = \
 	$(foreach icon, scummvm_icon scummvm_tools_icon, $(foreach size, 16 32 128, $(icon)_$(size).png)) \
 	scummvm_icon.png \
@@ -144,40 +149,40 @@ scummvm_wince_bar.png: derivate/scummvm_wince_bar.svg
 	inkscape -e $@ $<
 
 update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ico scummvm_icon_32.png $(PORTS_IMAGES)
-	cp scummvm_icon_dc.h           ../../scummvm/trunk/backends/platform/dc/deficon.h
-	cp scummvm_icon_32.png         ../../scummvm/trunk/backends/platform/gp2x/build/scummvm.png
-	cp scummvm_icon_32.png         ../../scummvm/trunk/backends/platform/gp2xwiz/build/scummvm.png
-	cp scummvm_logo_psp.png        ../../scummvm/trunk/backends/platform/psp/icon0.png
-	cp scummvm_icon_symbian16.bmp  ../../scummvm/trunk/backends/platform/symbian/res/ScummS.bmp
-	cp scummvm_icon_symbian16m.bmp ../../scummvm/trunk/backends/platform/symbian/res/scummSm.bmp
-	cp scummvm_icon_symbian18.bmp  ../../scummvm/trunk/backends/platform/symbian/res/ScummSmall.bmp
-	cp scummvm_icon_symbian18m.bmp ../../scummvm/trunk/backends/platform/symbian/res/scummSmallMask.bmp
-	cp scummvm_icon_symbian32.bmp  ../../scummvm/trunk/backends/platform/symbian/res/scummL.bmp
-	cp scummvm_icon_symbian32m.bmp ../../scummvm/trunk/backends/platform/symbian/res/scummLm.bmp
-	cp scummvm_icon_symbian40.bmp  ../../scummvm/trunk/backends/platform/symbian/res/scummLarge.bmp
-	cp scummvm_icon_symbian40m.bmp ../../scummvm/trunk/backends/platform/symbian/res/scummLargeMask.bmp
-	cp originals/scummvm_icon.svg  ../../scummvm/trunk/backends/platform/symbian/res/scummvm.svg
-	cp scummvm_icon_symbian64.bmp  ../../scummvm/trunk/backends/platform/symbian/res/scummxLarge.bmp
-	cp scummvm_icon_symbian64m.bmp ../../scummvm/trunk/backends/platform/symbian/res/scummxLargeMask.bmp
-	cp scummvm_wince_bar.bmp       ../../scummvm/trunk/backends/platform/wince/images/panelbig.bmp
-	cp scummvm_icon_32.ico         ../../scummvm/trunk/backends/platform/wince/images/scumm_icon.ico
-	cp scummvm_iphone_loading.png  ../../scummvm/trunk/dists/iphone/Default.png
-	cp scummvm_iphone_icon_60.png  ../../scummvm/trunk/dists/iphone/icon.png
-	cp scummvm_iphone_icon_72.png  ../../scummvm/trunk/dists/iphone/icon-72.png
-	cp scummvm_iphone_icon_114.png ../../scummvm/trunk/dists/iphone/icon@2x.png
-	cp scummvm_icon_moto48.png     ../../scummvm/trunk/dists/motoezx/scummvm.png
-	cp scummvm_icon_moto32.png     ../../scummvm/trunk/dists/motoezx/scummvm-sm.png
-	cp scummvm_icon_48.png         ../../scummvm/trunk/dists/motomagx/mgx/icon.png
-	cp scummvm_icon_48.png         ../../scummvm/trunk/dists/motomagx/mpkg/scummvm_usr.png
-	cp scummvm_icon_32.png         ../../scummvm/trunk/dists/motomagx/pep/scummvm_big_usr.png
-	cp scummvm_icon_18.png         ../../scummvm/trunk/dists/motomagx/pep/scummvm_small_usr.png
-	cp scummvm_logo_wii.png        ../../scummvm/trunk/dists/wii/icon.png
-	cp scummvm_icon.ico            ../../scummvm/trunk/icons/scummvm.ico
-	cp originals/scummvm_icon.svg  ../../scummvm/trunk/icons/scummvm.svg
-	cp scummvm_icon.xpm            ../../scummvm/trunk/icons/scummvm.xpm
-	cp scummvm_icon_16.ico         ../../web/trunk/favicon.ico
-	cp scummvm_web_link.png        ../../web/trunk/images/scummvm-link.png
-	cp scummvm_icon_50.png         ../../web-planet/avatars/scummvm.png
+	cp scummvm_icon_dc.h           $(SCUMMVM_PATH)/backends/platform/dc/deficon.h
+	cp scummvm_icon_32.png         $(SCUMMVM_PATH)/backends/platform/gp2x/build/scummvm.png
+	cp scummvm_icon_32.png         $(SCUMMVM_PATH)/backends/platform/gp2xwiz/build/scummvm.png
+	cp scummvm_logo_psp.png        $(SCUMMVM_PATH)/backends/platform/psp/icon0.png
+	cp scummvm_icon_symbian16.bmp  $(SCUMMVM_PATH)/backends/platform/symbian/res/ScummS.bmp
+	cp scummvm_icon_symbian16m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummSm.bmp
+	cp scummvm_icon_symbian18.bmp  $(SCUMMVM_PATH)/backends/platform/symbian/res/ScummSmall.bmp
+	cp scummvm_icon_symbian18m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummSmallMask.bmp
+	cp scummvm_icon_symbian32.bmp  $(SCUMMVM_PATH)/backends/platform/symbian/res/scummL.bmp
+	cp scummvm_icon_symbian32m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummLm.bmp
+	cp scummvm_icon_symbian40.bmp  $(SCUMMVM_PATH)/backends/platform/symbian/res/scummLarge.bmp
+	cp scummvm_icon_symbian40m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummLargeMask.bmp
+	cp originals/scummvm_icon.svg  $(SCUMMVM_PATH)/backends/platform/symbian/res/scummvm.svg
+	cp scummvm_icon_symbian64.bmp  $(SCUMMVM_PATH)/backends/platform/symbian/res/scummxLarge.bmp
+	cp scummvm_icon_symbian64m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummxLargeMask.bmp
+	cp scummvm_wince_bar.bmp       $(SCUMMVM_PATH)/backends/platform/wince/images/panelbig.bmp
+	cp scummvm_icon_32.ico         $(SCUMMVM_PATH)/backends/platform/wince/images/scumm_icon.ico
+	cp scummvm_iphone_loading.png  $(SCUMMVM_PATH)/dists/iphone/Default.png
+	cp scummvm_iphone_icon_60.png  $(SCUMMVM_PATH)/dists/iphone/icon.png
+	cp scummvm_iphone_icon_72.png  $(SCUMMVM_PATH)/dists/iphone/icon-72.png
+	cp scummvm_iphone_icon_114.png $(SCUMMVM_PATH)/dists/iphone/icon@2x.png
+	cp scummvm_icon_moto48.png     $(SCUMMVM_PATH)/dists/motoezx/scummvm.png
+	cp scummvm_icon_moto32.png     $(SCUMMVM_PATH)/dists/motoezx/scummvm-sm.png
+	cp scummvm_icon_48.png         $(SCUMMVM_PATH)/dists/motomagx/mgx/icon.png
+	cp scummvm_icon_48.png         $(SCUMMVM_PATH)/dists/motomagx/mpkg/scummvm_usr.png
+	cp scummvm_icon_32.png         $(SCUMMVM_PATH)/dists/motomagx/pep/scummvm_big_usr.png
+	cp scummvm_icon_18.png         $(SCUMMVM_PATH)/dists/motomagx/pep/scummvm_small_usr.png
+	cp scummvm_logo_wii.png        $(SCUMMVM_PATH)/dists/wii/icon.png
+	cp scummvm_icon.ico            $(SCUMMVM_PATH)/icons/scummvm.ico
+	cp originals/scummvm_icon.svg  $(SCUMMVM_PATH)/icons/scummvm.svg
+	cp scummvm_icon.xpm            $(SCUMMVM_PATH)/icons/scummvm.xpm
+	cp scummvm_icon_16.ico         $(WEB_PATH)/favicon.ico
+	cp scummvm_web_link.png        $(WEB_PATH)/images/scummvm-link.png
+	cp scummvm_icon_50.png         $(PLANET_PATH)/avatars/scummvm.png
 
 clean:
 	rm -f $(PORTS_IMAGES)
