@@ -4,12 +4,13 @@ WEB_PATH     = "../../web/trunk"
 PLANET_PATH  = "../../web-planet"
 
 REPOSITORY_IMAGES = \
-	$(foreach icon, scummvm_icon scummvm_tools_icon, $(foreach size, 16 32 128, $(icon)_$(size).png)) \
+	$(foreach icon, scummvm_icon scummvm_tools_icon, $(foreach size, 16 32 128 512, $(icon)_$(size).png)) \
 	scummvm_icon.png \
 	scummvm_icon.xpm \
 	scummvm_icon.ico \
 	scummvm_icon_16.ico \
 	scummvm_icon_32.ico \
+	scummvm_tools_icon.ico \
 	scummvm_logo.pdf
 
 PORTS_IMAGES = \
@@ -49,6 +50,20 @@ scummvm_icon.xpm: scummvm_icon.png
 	convert $< -resize 32x32 -depth 4 xpm:- | sed -e 's/static /static const /' -e 's/xpm__/scummvm_icon/' > $@
 
 scummvm_icon.ico: scummvm_icon.png
+	convert $< \
+		\( -clone 0 -resize 32x32 -colors 16 \) \
+		\( -clone 0 -resize 16x16 -colors 16 \) \
+		\( -clone 0 -resize 48x48 -colors 256 \) \
+		\( -clone 0 -resize 32x32 -colors 256 \) \
+		\( -clone 0 -resize 16x16 -colors 256 \) \
+		\( -clone 0 -resize 128x128 \) \
+		\( -clone 0 -resize 48x48 \) \
+		\( -clone 0 -resize 32x32 \) \
+		\( -clone 0 -resize 16x16 \) \
+		-delete 0 \
+		$@
+
+scummvm_tools_icon.ico: scummvm_tools_icon.png
 	convert $< \
 		\( -clone 0 -resize 32x32 -colors 16 \) \
 		\( -clone 0 -resize 16x16 -colors 16 \) \
