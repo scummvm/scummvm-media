@@ -4,7 +4,7 @@ WEB_PATH     = "../../web/trunk"
 PLANET_PATH  = "../../web-planet"
 
 REPOSITORY_IMAGES = \
-	$(foreach icon, scummvm_icon scummvm_tools_icon, $(foreach size, 16 32 128 512, $(icon)_$(size).png)) \
+	$(foreach icon, scummvm_icon scummvm_tools_icon, $(foreach size, 16 32 64 128 512, $(icon)_$(size).png)) \
 	scummvm_icon.png \
 	scummvm_icon.xpm \
 	scummvm_icon.ico \
