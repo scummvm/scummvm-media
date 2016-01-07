@@ -24,6 +24,7 @@ PORTS_IMAGES = \
 	$(foreach size, 16 18 32 40 64, scummvm_icon_symbian$(size).bmp scummvm_icon_symbian$(size)m.bmp) \
 	$(foreach size, 60 72 114, scummvm_iphone_icon_$(size).png) \
 	scummvm_iphone_loading.png \
+	$(foreach size, 1536x2048 768x1024 1242x2208 750x1334 640x1136-1 1024x768 2048x1536 2208x1242, scummvm_ios7_$(size).png) \
 	scummvm_logo_psp.png \
 	scummvm_logo_wii.png \
 	scummvm_logo_wiki.png \
@@ -45,6 +46,34 @@ scummvm_icon_%.png: scummvm_icon.png
 
 scummvm_icon_%.ico: scummvm_icon.png
 	convert $< -resize $*x$* $@
+
+scummvm_ios7_%.svg: originals/scummvm_logo.svg derivate/scummvm_ios_splash_template.svg
+	@export IOS_TEMPLATE_BEGIN=`awk 'BEGIN {c=1} /@SCUMMVM_LOGO@/{c=0} c==1{print $0}' derivate/scummvm_ios_splash_template.svg`; \
+	export IOS_TEMPLATE_END=`awk 'BEGIN {c=0} c==1{print $0} /@SCUMMVM_LOGO@/{c=1}' derivate/scummvm_ios_splash_template.svg`; \
+	export WIDTH=`echo $@ | sed 's/scummvm_ios7_\([0-9]*\).*$$/\1/'`; \
+	export HEIGHT=`echo $@ | sed 's/scummvm_ios7_[0-9]*x\([0-9]*\).*$$/\1/'`; \
+	if [ $$WIDTH -lt $$HEIGHT ]; then \
+		export LOGO_COVERAGE=1.196; \
+	else \
+		export LOGO_COVERAGE=0.87; \
+	fi; \
+	export LOGO_RATIO=4.315; \
+	export LOGO_WIDTH=`echo "scale=0; ($$LOGO_COVERAGE * $$WIDTH) / 1" | bc`; \
+	export LOGO_HEIGHT=`echo "scale=0; $$LOGO_WIDTH / $$LOGO_RATIO" | bc`; \
+	export LOGO_X=`echo "scale=0; ($$WIDTH - $$LOGO_WIDTH) / 2" | bc`; \
+	export LOGO_Y=`echo "scale=0; ($$HEIGHT - $$LOGO_HEIGHT) / 2" | bc`; \
+	echo $$IOS_TEMPLATE_BEGIN | sed \
+	    -e "s/@WIDTH@/$$WIDTH/g" \
+	    -e "s/@HEIGHT@/$$HEIGHT/g" \
+		-e "s/@LOGO_X@/$$LOGO_X/g" \
+		-e "s/@LOGO_Y@/$$LOGO_Y/g" \
+		-e "s/@LOGO_WIDTH@/$$LOGO_WIDTH/g" \
+		-e "s/@LOGO_HEIGHT@/$$LOGO_HEIGHT/g" >$@; \
+	grep -v '^<?xml' originals/scummvm_logo.svg | sed -e 's/width="[0-9]*px"//g' -e 's/height="[0-9]*px"//g' >>$@; \
+	echo $$IOS_TEMPLATE_END >>$@
+
+scummvm_ios7_%.png: scummvm_ios7_%.svg
+	convert $< $@
 
 scummvm_icon.xpm: scummvm_icon.png
 	convert $< -resize 32x32 -depth 4 xpm:- | sed -e 's/static /static const /' -e 's/xpm__/scummvm_icon/' > $@
@@ -185,6 +214,14 @@ update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ic
 	cp scummvm_iphone_icon_60.png  $(SCUMMVM_PATH)/dists/iphone/icon.png
 	cp scummvm_iphone_icon_72.png  $(SCUMMVM_PATH)/dists/iphone/icon-72.png
 	cp scummvm_iphone_icon_114.png $(SCUMMVM_PATH)/dists/iphone/icon@2x.png
+	cp scummvm_ios7_1536x2048.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/LaunchImage.launchimage/ScummVM-splash-1536x2048.png
+	cp scummvm_ios7_768x1024.png   $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/LaunchImage.launchimage/ScummVM-splash-768x1024.png
+	cp scummvm_ios7_1242x2208.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/LaunchImage.launchimage/ScummVM-splash-1242x2208.png
+	cp scummvm_ios7_750x1334.png   $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/LaunchImage.launchimage/ScummVM-splash-750x1334.png
+	cp scummvm_ios7_640x1136-1.png $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/LaunchImage.launchimage/ScummVM-splash-640x1136-1.png
+	cp scummvm_ios7_1024x768.png   $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/LaunchImage.launchimage/ScummVM-splash-1024x768.png
+	cp scummvm_ios7_2048x1536.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/LaunchImage.launchimage/ScummVM-splash-2048x1536.png
+	cp scummvm_ios7_2208x1242.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/LaunchImage.launchimage/ScummVM-splash-2208x1242.png
 	cp scummvm_icon_moto48.png     $(SCUMMVM_PATH)/dists/motoezx/scummvm.png
 	cp scummvm_icon_moto32.png     $(SCUMMVM_PATH)/dists/motoezx/scummvm-sm.png
 	cp scummvm_icon_48.png         $(SCUMMVM_PATH)/dists/motomagx/mgx/icon.png
