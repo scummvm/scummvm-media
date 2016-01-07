@@ -194,8 +194,6 @@ scummvm_wince_bar.png: derivate/scummvm_wince_bar.svg
 
 update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ico scummvm_icon_32.png $(PORTS_IMAGES)
 	cp scummvm_icon_dc.h           $(SCUMMVM_PATH)/backends/platform/dc/deficon.h
-	cp scummvm_icon_32.png         $(SCUMMVM_PATH)/backends/platform/gp2x/build/scummvm.png
-	cp scummvm_icon_32.png         $(SCUMMVM_PATH)/backends/platform/gp2xwiz/build/scummvm.png
 	cp scummvm_logo_psp.png        $(SCUMMVM_PATH)/backends/platform/psp/icon0.png
 	cp scummvm_icon_symbian16.bmp  $(SCUMMVM_PATH)/backends/platform/symbian/res/ScummS.bmp
 	cp scummvm_icon_symbian16m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummSm.bmp
