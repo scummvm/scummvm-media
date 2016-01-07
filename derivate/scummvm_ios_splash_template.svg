@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" width="@WIDTH@" height="@HEIGHT@" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+
+	<!-- Background -->
+	<svg width="100%" height="100%" viewBox="0 0 320 460" preserveAspectRatio="none">
+		<rect id="rect3925" x="0" y="0" width="320" height="460" style="fill:rgb(209,110,9);"/>
+		<rect id="rect4724" x="0" y="391" width="320" height="162" style="fill:url(#_Linear1);"/>
+		<path id="path3404" d="M-92.934,240.797C-24.244,181.198 331.33,148.873 407.091,147.863C373.756,14.523 380.621,-27.775 156.574,-54.168C-45.296,-33.715 -91.835,4.009 -92.934,240.797Z" style="fill:url(#_Linear2);"/>
+		<defs>
+			<linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(9.27069e-15,-151.402,151.402,9.27069e-15,160,553)"><stop offset="0%" style="stop-color:white;stop-opacity:0.492776"/><stop offset="100%" style="stop-color:white;stop-opacity:0"/></linearGradient>
+			<linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-15.1573,293.954,-293.954,-15.1573,241.932,-68.3098)"><stop offset="0%" style="stop-color:white;stop-opacity:0.701961"/><stop offset="100%" style="stop-color:white;stop-opacity:0"/></linearGradient>
+		</defs>
+	</svg>
+
+	<!-- Logo -->
+	<svg x="@LOGO_X@" y="@LOGO_Y@" width="@LOGO_WIDTH@" height="@LOGO_HEIGHT@">
+		@SCUMMVM_LOGO@
+	</svg>
+</svg>
