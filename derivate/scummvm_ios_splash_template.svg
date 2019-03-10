@@ -4,7 +4,7 @@
 
 	<!-- Background -->
 	<svg width="100%" height="100%" viewBox="0 0 320 460" preserveAspectRatio="none">
-		<rect id="rect3925" x="0" y="0" width="320" height="460" style="fill:rgb(209,110,9);"/>
+		<rect id="rect3925" x="0" y="0" width="320" height="460" style="fill:rgb(215,115,55);"/>
 		<rect id="rect4724" x="0" y="391" width="320" height="162" style="fill:url(#_Linear1);"/>
 		<path id="path3404" d="M-92.934,240.797C-24.244,181.198 331.33,148.873 407.091,147.863C373.756,14.523 380.621,-27.775 156.574,-54.168C-45.296,-33.715 -91.835,4.009 -92.934,240.797Z" style="fill:url(#_Linear2);"/>
 		<defs>
