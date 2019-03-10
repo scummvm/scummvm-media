@@ -1,3 +1,4 @@
+SHELL := /bin/bash # Use bash syntax
 # Install paths for the generated images
 SCUMMVM_PATH = "../../scummvm/trunk"
 WEB_PATH     = "../../web/trunk"
