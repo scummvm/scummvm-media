@@ -38,8 +38,8 @@ all: $(REPOSITORY_IMAGES)
 
 # REPOSITORY IMAGES
 
-scummvm_icon.png: originals/scummvm_icon.svg
-	inkscape -e $@ -w $(ICON_BIG) -h $(ICON_BIG) $<
+scummvm_icon.png: originals/scummvm_icon.png
+	cp $^ $@
 
 scummvm_icon_%.png: scummvm_icon.png
 	convert $< -resize $*x$* $@
@@ -92,6 +92,9 @@ scummvm_icon.ico: scummvm_icon.png
 		-delete 0 \
 		$@
 
+scummvm_tools_icon.png: scummvm_icon.png derivate/scummvm_tools_badge.svg
+	convert -background none -gravity SouthEast -composite $^ $@
+
 scummvm_tools_icon.ico: scummvm_tools_icon.png
 	convert $< \
 		\( -clone 0 -resize 32x32 -colors 16 \) \
@@ -105,6 +108,9 @@ scummvm_tools_icon.ico: scummvm_tools_icon.png
 		\( -clone 0 -resize 16x16 \) \
 		-delete 0 \
 		$@
+
+scummvm_logo.png: originals/scummvm_logo.png
+	cp $^ $@
 
 scummvm_logo.pdf: scummvm_logo.png
 	convert $< $@
