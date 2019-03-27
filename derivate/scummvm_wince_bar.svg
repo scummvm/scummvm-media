@@ -76,7 +76,7 @@
          height="56.5"
          width="194.32683"
          id="use5477"
-         style="opacity:1;color:#000000;fill:rgb(215,115,55);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;filter:url(#filter3201);enable-background:accumulate" />
+         style="opacity:1;color:#000000;fill:rgb(204,102,0);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;filter:url(#filter3201);enable-background:accumulate" />
     </clipPath>
     <linearGradient
        id="linearGradient3173">
@@ -228,7 +228,7 @@
        inkscape:label="Button"
        style="display:inline">
       <rect
-         style="opacity:1;color:#000000;fill:rgb(215,115,55);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;filter:url(#filter3201);enable-background:accumulate"
+         style="opacity:1;color:#000000;fill:rgb(204,102,0);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;filter:url(#filter3201);enable-background:accumulate"
          id="rect2867"
          width="194.32683"
          height="56.5"
