@@ -110,7 +110,7 @@
        clipPathUnits="userSpaceOnUse"
        id="clipPath3255">
       <rect
-         style="opacity:1;color:#000000;fill:rgb(215,115,55);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         style="opacity:1;color:#000000;fill:rgb(204,102,0);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
          id="rect3257"
          width="56.5"
          height="56.5"
@@ -215,7 +215,7 @@
      style="opacity:1;display:inline"
      sodipodi:insensitive="true">
     <rect
-       style="opacity:1;color:#000000;fill:rgb(215,115,55);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;filter:url(#filter3201);enable-background:accumulate"
+       style="opacity:1;color:#000000;fill:rgb(204,102,05);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;filter:url(#filter3201);enable-background:accumulate"
        id="rect2867"
        width="56.5"
        height="56.5"
