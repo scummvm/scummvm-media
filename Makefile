@@ -1,8 +1,6 @@
 SHELL := /bin/bash # Use bash syntax
 # Install paths for the generated images
 SCUMMVM_PATH = "../../scummvm"
-WEB_PATH     = "../../web/trunk"
-PLANET_PATH  = "../../web-planet"
 
 REPOSITORY_IMAGES = \
 	$(foreach icon, scummvm_icon scummvm_tools_icon, $(foreach size, 16 32 64 128 512, $(icon)_$(size).png)) \
@@ -15,7 +13,6 @@ REPOSITORY_IMAGES = \
 	scummvm_logo.pdf
 
 PORTS_IMAGES = \
-	$(foreach site, buildbot doxygen forums logs planet wiki, scummvm_favicon_$(site).ico) \
 	scummvm_icon_18.png \
 	scummvm_icon_48.png \
 	scummvm_icon_50.png \
@@ -23,13 +20,11 @@ PORTS_IMAGES = \
 	scummvm_icon_moto32.png \
 	scummvm_icon_moto48.png \
 	$(foreach size, 16 18 32 40 64, scummvm_icon_symbian$(size).bmp scummvm_icon_symbian$(size)m.bmp) \
-	$(foreach size, 60 72 114, scummvm_iphone_icon_$(size).png) \
+	$(foreach size, 29 58 87 40 80 120 180 76 152 167, scummvm_iphone_icon_$(size).png) \
 	scummvm_iphone_loading.png \
 	$(foreach size, 1536x2048 768x1024 1242x2208 750x1334 640x1136-1 1024x768 2048x1536 2208x1242, scummvm_ios7_$(size).png) \
 	scummvm_logo_psp.png \
 	scummvm_logo_wii.png \
-	scummvm_logo_wiki.png \
-	scummvm_web_link.png \
 	scummvm_wince_bar.bmp \
 	scummvm_wince_bar.png
 
@@ -121,11 +116,6 @@ scummvm_logo.pdf: scummvm_logo.png
 scummvm_tools_icon_%.png: scummvm_tools_icon.png
 	convert $< -resize $*x$* $@
 
-# WEBSITE IMAGES
-
-scummvm_favicon_%.ico: scummvm_icon_16.png derivate/scummvm_favicon_%.png
-	convert -composite $^ $@
-
 # PORT SPECIFIC IMAGES
 
 scummvm_icon_dc.h: scummvm_icon_dc.ico
@@ -186,12 +176,6 @@ scummvm_logo_psp.png: scummvm_logo.png
 scummvm_logo_wii.png: scummvm_logo.png
 	convert $< -resize 128x48 -gravity Center -background none -extent 128x48 $@
 
-scummvm_logo_wiki.png: scummvm_logo.png
-	convert $< -resize 210x65 -gravity Center -background none -extent 200x58 $@
-
-scummvm_web_link.png: derivate/scummvm_web_link.svg
-	inkscape -e $@ $<
-
 scummvm_wince_bar.bmp: scummvm_wince_bar.png
 	@#TODO: Can 'convert' write indexed BMPs directly?
 	convert $< -colors 256 ppm:- | ppmtobmp - -bpp 8 > $@
@@ -216,9 +200,18 @@ update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ic
 	cp scummvm_wince_bar.bmp       $(SCUMMVM_PATH)/backends/platform/wince/images/panelbig.bmp
 	cp scummvm_icon_32.ico         $(SCUMMVM_PATH)/backends/platform/wince/images/scumm_icon.ico
 	cp scummvm_iphone_loading.png  $(SCUMMVM_PATH)/dists/iphone/Default.png
-	cp scummvm_iphone_icon_60.png  $(SCUMMVM_PATH)/dists/iphone/icon.png
-	cp scummvm_iphone_icon_72.png  $(SCUMMVM_PATH)/dists/iphone/icon-72.png
-	cp scummvm_iphone_icon_114.png $(SCUMMVM_PATH)/dists/iphone/icon@2x.png
+	cp scummvm_iphone_icon_29.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-29.png
+	cp scummvm_iphone_icon_58.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-29@2x.png
+	cp scummvm_iphone_icon_87.png $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-29@3x.png
+	cp scummvm_iphone_icon_40.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-40.png
+	cp scummvm_iphone_icon_80.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-40@2x.png
+	cp scummvm_iphone_icon_120.png $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-40@3x.png
+	cp scummvm_iphone_icon_60.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-60.png
+	cp scummvm_iphone_icon_120.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-60@2x.png
+	cp scummvm_iphone_icon_180.png $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-60-3x.png
+	cp scummvm_iphone_icon_76.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-76.png
+	cp scummvm_iphone_icon_152.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-76@2x.png
+	cp scummvm_iphone_icon_167.png $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-83.5@2x.png
 	cp scummvm_ios7_1536x2048.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/LaunchImage.launchimage/ScummVM-splash-1536x2048.png
 	cp scummvm_ios7_768x1024.png   $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/LaunchImage.launchimage/ScummVM-splash-768x1024.png
 	cp scummvm_ios7_1242x2208.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/LaunchImage.launchimage/ScummVM-splash-1242x2208.png
@@ -237,9 +230,6 @@ update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ic
 	cp scummvm_icon.ico            $(SCUMMVM_PATH)/icons/scummvm.ico
 	cp originals/scummvm_icon.svg  $(SCUMMVM_PATH)/icons/scummvm.svg
 	cp scummvm_icon.xpm            $(SCUMMVM_PATH)/icons/scummvm.xpm
-	cp scummvm_icon_16.ico         $(WEB_PATH)/favicon.ico
-	cp scummvm_web_link.png        $(WEB_PATH)/images/scummvm-link.png
-	cp scummvm_icon_50.png         $(PLANET_PATH)/avatars/scummvm.png
 
 clean:
 	rm -f $(PORTS_IMAGES)
