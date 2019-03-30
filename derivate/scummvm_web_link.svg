@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -13,7 +14,7 @@
    height="31"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.46"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    version="1.0"
    sodipodi:docname="scummvm_web_link.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape">
@@ -38,15 +39,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="8"
-     inkscape:cx="17.26925"
+     inkscape:cx="-11.23075"
      inkscape:cy="18.928133"
      inkscape:document-units="px"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="capa1"
      showgrid="false"
-     inkscape:window-width="1280"
+     inkscape:window-width="1802"
      inkscape:window-height="725"
      inkscape:window-x="0"
-     inkscape:window-y="25" />
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -82,7 +84,7 @@
      style="display:inline"
      sodipodi:insensitive="true">
     <rect
-       style="opacity:1;color:#000000;fill:rgb(204,102,0);fill-opacity:1;fill-rule:nonzero;stroke:#a82709;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#cc6600;fill-opacity:1;fill-rule:nonzero;stroke:#a82709;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;enable-background:accumulate"
        id="rect2403"
        width="88"
        height="31"
@@ -97,12 +99,12 @@
      style="display:inline"
      sodipodi:insensitive="true">
     <image
-       y="2.7120986"
-       x="0.026864529"
-       id="image4319"
-       height="25.439381"
-       width="87.067665"
        sodipodi:absref="../scummvm_logo.png"
-       xlink:href="../scummvm_logo.png" />
+       xlink:href="../scummvm_logo.png"
+       width="87.067665"
+       height="25.439381"
+       id="image4319"
+       x="0.026864529"
+       y="2.7120986" />
   </g>
 </svg>

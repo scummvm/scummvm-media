@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -13,11 +14,12 @@
    height="60"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.46"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    version="1.0"
    sodipodi:docname="scummvm_iphone_icon.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   style="display:inline">
+   style="display:inline"
+   enable-background="new">
   <defs
      id="defs4">
     <inkscape:perspective
@@ -27,28 +29,6 @@
        inkscape:vp_z="60 : 30 : 1"
        inkscape:persp3d-origin="30 : 20 : 1"
        id="perspective36" />
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient3915">
-      <stop
-         style="stop-color:#ffffff;stop-opacity:0.702"
-         offset="0"
-         id="stop3917" />
-      <stop
-         style="stop-color:#ffffff;stop-opacity:0"
-         offset="1"
-         id="stop3919" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3915"
-       id="linearGradient4740"
-       x1="159.99997"
-       y1="562.70013"
-       x2="160"
-       y2="367.47662"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.1912466,0,0,0.1583587,-0.1938836,-13.162268)" />
     <linearGradient
        id="linearGradient3173">
       <stop
@@ -67,15 +47,6 @@
          stdDeviation="1"
          id="feGaussianBlur3168" />
     </filter>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3173"
-       id="linearGradient3179"
-       x1="30.482"
-       y1="-3.3237331"
-       x2="31.665726"
-       y2="27.288275"
-       gradientUnits="userSpaceOnUse" />
     <filter
        id="filter3201"
        inkscape:label="Specular background"
@@ -144,6 +115,56 @@
          style="opacity:1;display:inline"
          clip-path="none" />
     </clipPath>
+    <linearGradient
+       id="linearGradient3902">
+      <stop
+         id="stop3904"
+         offset="0"
+         style="stop-color:#ffffff;stop-opacity:1;" />
+      <stop
+         id="stop3906"
+         offset="1"
+         style="stop-color:#fff9f9;stop-opacity:0.72868216;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4110">
+      <stop
+         id="stop4112"
+         offset="0"
+         style="stop-color:#0eb0fb;stop-opacity:1;" />
+      <stop
+         id="stop4114"
+         offset="1"
+         style="stop-color:#ff00f3;stop-opacity:1;" />
+    </linearGradient>
+    <inkscape:perspective
+       id="perspective4094"
+       inkscape:persp3d-origin="512 : 341.33333 : 1"
+       inkscape:vp_z="1024 : 512 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 512 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <linearGradient
+       id="linearGradient4483">
+      <stop
+         id="stop4485"
+         offset="0"
+         style="stop-color:#056aff;stop-opacity:1;" />
+      <stop
+         id="stop4487"
+         offset="1"
+         style="stop-color:#ffffff;stop-opacity:0;" />
+    </linearGradient>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter7782">
+      <feBlend
+         inkscape:collect="always"
+         mode="overlay"
+         in2="BackgroundImage"
+         id="feBlend7784" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -156,15 +177,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="5.6568542"
-     inkscape:cx="-10.717098"
-     inkscape:cy="30"
+     inkscape:cx="-17.524779"
+     inkscape:cy="8.2926442"
      inkscape:document-units="px"
-     inkscape:current-layer="svg2"
+     inkscape:current-layer="layer3"
      showgrid="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="725"
+     inkscape:window-width="1802"
+     inkscape:window-height="795"
      inkscape:window-x="0"
-     inkscape:window-y="25" />
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -195,69 +217,33 @@
   </metadata>
   <g
      inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="Shadow"
-     style="display:inline"
-     sodipodi:insensitive="true">
-    <rect
-       style="opacity:1;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;filter:url(#filter3166);enable-background:accumulate"
-       id="rect2394"
-       width="56.5"
-       height="56.5"
-       x="2.2319486"
-       y="1.98"
-       ry="9.9894247" />
-  </g>
-  <g
-     inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Background"
-     style="opacity:1;display:inline"
+     style="display:inline;opacity:1"
      sodipodi:insensitive="true">
     <rect
-       style="opacity:1;color:#000000;fill:rgb(204,102,05);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;filter:url(#filter3201);enable-background:accumulate"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#cc6600;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52453554;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;filter:url(#filter7782);enable-background:accumulate"
        id="rect2867"
-       width="56.5"
-       height="56.5"
-       x="2.2319486"
-       y="0.48030549"
+       width="60"
+       height="60"
+       x="0"
+       y="0"
        ry="9.9894247"
        clip-path="url(#clipPath3255)"
-       transform="translate(5.138588e-5,-3.0549288e-4)" />
+       transform="matrix(1.0657047,0,0,1.0657047,-2.2679183,-0.47380552)" />
   </g>
   <g
      inkscape:label="Logo"
      inkscape:groupmode="layer"
      id="capa1"
-     style="opacity:1;display:inline">
+     style="display:inline;opacity:1">
     <image
-       y="7.6323638"
-       x="8.0262508"
+       sodipodi:absref="C:\dev\scummvm-media\derivate\../scummvm_icon.png"
+       xlink:href="../scummvm_icon.png"
+       width="50"
+       height="50"
        id="image2860"
-       height="44.078789"
-       width="44.078789"
-       sodipodi:absref="../scummvm_icon.png"
-       xlink:href="../scummvm_icon.png" />
-  </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer4"
-     inkscape:label="Brightness"
-     style="display:inline"
-     sodipodi:insensitive="true">
-    <path
-       style="opacity:1;fill:url(#linearGradient3179);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline"
-       d="M 31.504949,27.287835 C 51.951358,27.350186 67.739798,20.763836 68.375516,16.681233 C 69.030423,12.475396 76.957616,-5.4774612 30.999873,-5.7946616 C -15.084134,-6.1127334 -8.6486154,12.893161 -8.6486155,17.817655 C -8.6486157,22.61588 10.932272,27.225098 31.504949,27.287835 z"
-       id="path3170"
-       sodipodi:nodetypes="czzzz"
-       clip-path="url(#clipPath5475)" />
-    <rect
-       style="opacity:0.70200004;color:#000000;fill:url(#linearGradient4740);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       id="rect4724"
-       width="61.19891"
-       height="15.677507"
-       x="-0.19388892"
-       y="44.005211"
-       clip-path="url(#clipPath5471)" />
+       x="5"
+       y="5" />
   </g>
 </svg>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -13,11 +14,12 @@
    height="40"
    id="svg3289"
    sodipodi:version="0.32"
-   inkscape:version="0.46"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    version="1.0"
    sodipodi:docname="scummvm_wince_bar.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   style="display:inline">
+   style="display:inline"
+   enable-background="new">
   <defs
      id="defs3291">
     <inkscape:perspective
@@ -115,24 +117,6 @@
          id="use3500"
          style="opacity:1;color:#000000;fill:#c26e18;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;filter:url(#filter3201);enable-background:accumulate" />
     </clipPath>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3173"
-       id="linearGradient3547"
-       gradientUnits="userSpaceOnUse"
-       x1="99.395424"
-       y1="72.492607"
-       x2="99.395424"
-       y2="44.005211" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3173"
-       id="linearGradient3549"
-       gradientUnits="userSpaceOnUse"
-       x1="92.00029"
-       y1="-10.394801"
-       x2="93.891121"
-       y2="27.288023" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -145,17 +129,18 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="4"
-     inkscape:cx="170.49026"
+     inkscape:cx="248.79812"
      inkscape:cy="18.828394"
      inkscape:document-units="px"
-     inkscape:current-layer="layer10"
+     inkscape:current-layer="layer3"
      showgrid="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="725"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-width="1891"
+     inkscape:window-height="717"
+     inkscape:window-x="263"
+     inkscape:window-y="263"
      showguides="true"
-     inkscape:guide-bbox="true" />
+     inkscape:guide-bbox="true"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata3294">
     <rdf:RDF>
@@ -191,7 +176,7 @@
      style="display:inline"
      sodipodi:insensitive="true">
     <rect
-       style="opacity:1;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;enable-background:accumulate"
        id="rect3925"
        width="320"
        height="40"
@@ -213,7 +198,7 @@
        style="display:inline"
        sodipodi:insensitive="true">
       <rect
-         style="opacity:1;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;filter:url(#filter3166);enable-background:accumulate"
+         style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;filter:url(#filter3166);enable-background:accumulate"
          id="rect2394"
          width="194.32689"
          height="56.5"
@@ -228,7 +213,7 @@
        inkscape:label="Button"
        style="display:inline">
       <rect
-         style="opacity:1;color:#000000;fill:rgb(204,102,0);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;filter:url(#filter3201);enable-background:accumulate"
+         style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#cc6600;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;enable-background:accumulate"
          id="rect2867"
          width="194.32683"
          height="56.5"
@@ -236,7 +221,8 @@
          y="0.48030549"
          ry="9.9894247"
          clip-path="url(#clipPath2712)"
-         transform="matrix(0.641933,0,0,0.641933,192.88043,1.4966315)" />
+         transform="matrix(0.641933,0,0,0.641933,192.88043,1.4966315)"
+         inkscape:label="rect2867" />
     </g>
     <g
        inkscape:groupmode="layer"
@@ -245,37 +231,14 @@
        style="display:inline"
        sodipodi:insensitive="true">
       <image
-         style="display:inline"
-         y="1.6404433"
-         x="193.05246"
-         id="image4719"
-         height="37.081474"
-         width="126.91338"
          sodipodi:absref="../scummvm_logo.png"
-         xlink:href="../scummvm_logo.png" />
-    </g>
-    <g
-       inkscape:groupmode="layer"
-       id="layer7"
-       inkscape:label="Brightness"
-       style="display:inline"
-       sodipodi:insensitive="true">
-      <path
-         style="opacity:1;fill:url(#linearGradient3549);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline"
-         d="M 94.791006,31.530476 C 115.23741,31.592827 214.1109,17.935409 214.74662,13.852806 C 215.40153,9.6469689 197.64483,-13.960476 86.507755,-13.572836 C -21.800926,-13.195062 -8.6486154,12.893161 -8.6486155,17.817655 C -8.6486157,22.61588 74.218329,31.467739 94.791006,31.530476 z"
-         id="path3170"
-         sodipodi:nodetypes="czzzz"
-         clip-path="url(#clipPath5475)"
-         transform="matrix(0.641933,0,0,0.641933,192.88039,1.4968279)" />
-      <rect
-         style="opacity:0.70200004;color:#000000;fill:url(#linearGradient3547);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52499998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-         id="rect2690"
-         width="200.69891"
-         height="15.677507"
-         x="-0.19388892"
-         y="44.005211"
-         clip-path="url(#clipPath3498)"
-         transform="matrix(0.641933,0,0,0.641933,192.88039,1.4968279)" />
+         xlink:href="../scummvm_logo.png"
+         width="126.91338"
+         height="37.081474"
+         id="image4719"
+         x="193.05246"
+         y="1.6404433"
+         style="display:inline" />
     </g>
   </g>
 </svg>
