@@ -211,22 +211,22 @@ ports/scummvm_icon_ds_%.bmp: scummvm_icon.png derivate/ds_overlay.png
 
 ports: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ico scummvm_icon_32.png $(PORTS_IMAGES)
 
-update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ico scummvm_icon_32.png $(PORTS_IMAGES)
+update: ports
 # Android
-	cp ports/scummvm_icon_64.png         $(SCUMMVM_PATH)/dists/android/res/drawable/scummvm.png
+	cp scummvm_icon_64.png               $(SCUMMVM_PATH)/dists/android/res/drawable/scummvm.png
 	cp ports/scummvm_logo_android.png    $(SCUMMVM_PATH)/dists/android/res/drawable/scummvm_big.png
 	cp ports/scummvm_icon_android_tv.png $(SCUMMVM_PATH)/dists/android/res/drawable-xhdpi/leanback_icon.png
 	cp ports/scummvm_icon_ouya.png       $(SCUMMVM_PATH)/dists/android/res/drawable-xhdpi/ouya_icon.png
-	cp ports/scummvm_icon_128.png        $(SCUMMVM_PATH)/dists/androidsdl/scummvm/icon.png
+	cp scummvm_icon_128.png              $(SCUMMVM_PATH)/dists/androidsdl/scummvm/icon.png
 	cp ports/scummvm_icon_android_tv.png $(SCUMMVM_PATH)/dists/androidsdl/scummvm/banner.png
 
 # BADA TODO
 
 # GCW0
-	cp ports/scummvm_icon_32.png         $(SCUMMVM_PATH)/dists/gcw0/scummvm.png
+	cp scummvm_icon_32.png               $(SCUMMVM_PATH)/dists/gcw0/scummvm.png
 
 # GPH
-	cp ports/scummvm_icon_32.png         $(SCUMMVM_PATH)/dists/gph/scummvm.png
+	cp scummvm_icon_32.png               $(SCUMMVM_PATH)/dists/gph/scummvm.png
 	cp ports/scummvm_icon_gph.png        $(SCUMMVM_PATH)/dists/gph/scummvmb.png
 
 # DC
@@ -240,7 +240,7 @@ update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ic
 	cp ports/scummvm_logo_psp.png        $(SCUMMVM_PATH)/backends/platform/psp/icon0.png
 
 # Dingux
-	cp ports/scummvm_icon_32.png         $(SCUMMVM_PATH)/backends/platform/dingux/scummvm.png
+	cp scummvm_icon_32.png               $(SCUMMVM_PATH)/backends/platform/dingux/scummvm.png
 
 # DS
 	cp ports/scummvm_icon_ds.bmp         $(SCUMMVM_PATH)/backends/platform/ds/logo.bmp
@@ -264,13 +264,13 @@ update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ic
 	cp ports/scummvm_icon_symbian32m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummLm.bmp
 	cp ports/scummvm_icon_symbian40.bmp  $(SCUMMVM_PATH)/backends/platform/symbian/res/scummLarge.bmp
 	cp ports/scummvm_icon_symbian40m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummLargeMask.bmp
-	cp ports/originals/scummvm_icon.svg  $(SCUMMVM_PATH)/backends/platform/symbian/res/scummvm.svg
+	cp originals/scummvm_icon.svg        $(SCUMMVM_PATH)/backends/platform/symbian/res/scummvm.svg
 	cp ports/scummvm_icon_symbian64.bmp  $(SCUMMVM_PATH)/backends/platform/symbian/res/scummxLarge.bmp
 	cp ports/scummvm_icon_symbian64m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummxLargeMask.bmp
 
 # WinCE
 	cp ports/scummvm_wince_bar.bmp       $(SCUMMVM_PATH)/backends/platform/wince/images/panelbig.bmp
-	cp ports/scummvm_icon_32.ico         $(SCUMMVM_PATH)/backends/platform/wince/images/scumm_icon.ico
+	cp scummvm_icon_32.ico               $(SCUMMVM_PATH)/backends/platform/wince/images/scumm_icon.ico
 
 # iOS 7
 	cp ports/scummvm_iphone_loading.png  $(SCUMMVM_PATH)/dists/iphone/Default.png
@@ -308,20 +308,20 @@ update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ic
 	cp ports/scummvm_icon_26.png         $(SCUMMVM_PATH)/dists/maemo/scummvm26.png
 	cp ports/scummvm_icon_40.png         $(SCUMMVM_PATH)/dists/maemo/scummvm40.png
 	cp ports/scummvm_icon_48.png         $(SCUMMVM_PATH)/dists/maemo/scummvm48.png
-	cp ports/scummvm_icon_64.png         $(SCUMMVM_PATH)/dists/maemo/scummvm64.png
+	cp scummvm_icon_64.png               $(SCUMMVM_PATH)/dists/maemo/scummvm64.png
 	cp ports/scummvm_icon_48.png         $(SCUMMVM_PATH)/dists/maemo/am-icon-48.png
-	cp ports/scummvm_icon_512.png        $(SCUMMVM_PATH)/dists/maemo/scummvm.png
+	cp scummvm_icon_512.png              $(SCUMMVM_PATH)/dists/maemo/scummvm.png
 
 # Moto
 	cp ports/scummvm_icon_moto48.png     $(SCUMMVM_PATH)/dists/motoezx/scummvm.png
 	cp ports/scummvm_icon_moto32.png     $(SCUMMVM_PATH)/dists/motoezx/scummvm-sm.png
 	cp ports/scummvm_icon_48.png         $(SCUMMVM_PATH)/dists/motomagx/mgx/icon.png
 	cp ports/scummvm_icon_48.png         $(SCUMMVM_PATH)/dists/motomagx/mpkg/scummvm_usr.png
-	cp ports/scummvm_icon_32.png         $(SCUMMVM_PATH)/dists/motomagx/pep/scummvm_big_usr.png
+	cp scummvm_icon_32.png               $(SCUMMVM_PATH)/dists/motomagx/pep/scummvm_big_usr.png
 	cp ports/scummvm_icon_18.png         $(SCUMMVM_PATH)/dists/motomagx/pep/scummvm_small_usr.png
 
 # OpenPandora
-	cp ports/scummvm_icon_32.png         $(SCUMMVM_PATH)/dists/openpandora/icon/scummvm.png
+	cp scummvm_icon_32.png               $(SCUMMVM_PATH)/dists/openpandora/icon/scummvm.png
 
 # OS2
 # TODO: What format .ico is this?
@@ -330,7 +330,7 @@ update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ic
 	cp ports/scummvm_icon_ps3.png        $(SCUMMVM_PATH)/dists/ps3/ICON0.PNG
 
 # PS Vita
-	cp ports/scummvm_icon_128.png        $(SCUMMVM_PATH)/dists/psp2/icon0.png
+	cp scummvm_icon_128.png              $(SCUMMVM_PATH)/dists/psp2/icon0.png
 	cp ports/scummvm_bg_vita.png         $(SCUMMVM_PATH)/dists/psp2/bg.png
 	cp ports/scummvm_startup_vita.png    $(SCUMMVM_PATH)/dists/psp2/startup.png
 
@@ -347,9 +347,9 @@ update: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ic
 	cp ports/scummvm_logo_wii.png        $(SCUMMVM_PATH)/dists/wii/icon.png
 
 # PC
-	cp ports/scummvm_icon.ico            $(SCUMMVM_PATH)/icons/scummvm.ico
-	cp ports/originals/scummvm_icon.svg  $(SCUMMVM_PATH)/icons/scummvm.svg
-	cp ports/scummvm_icon.xpm            $(SCUMMVM_PATH)/icons/scummvm.xpm
+	cp scummvm_icon.ico                  $(SCUMMVM_PATH)/icons/scummvm.ico
+	cp originals/scummvm_icon.svg        $(SCUMMVM_PATH)/icons/scummvm.svg
+	cp scummvm_icon.xpm                  $(SCUMMVM_PATH)/icons/scummvm.xpm
 
 # Win32
 # TODO: Various installer images
