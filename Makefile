@@ -114,10 +114,9 @@ ports/scummvm_icon_dc.h: ports/scummvm_icon_dc.ico
 	xxd -i < $< >> $@
 	echo "};" >> $@
 
-#FIXME: Doesn't show transparency, we create it with The GIMP until we find an automatic way to do it
+#TODO: Validate that this works on DC
 ports/scummvm_icon_dc.ico: scummvm_icon.png
-	touch $@
-	@#convert $< -resize 32x32 -colors 15 $@
+	convert $< -resize 32x32 -colors 15 -depth 4 -alpha on $@
 
 ports/scummvm_icon_moto32.png: scummvm_icon.png
 	convert $< -resize 32x24 -gravity Center -background none -extent 32x24 $@
