@@ -106,33 +106,8 @@ scummvm_tools_icon_%.png: scummvm_tools_icon.png
 ports/scummvm_icon_%.png: scummvm_icon.png
 	convert $< -resize $*x$* $@
 
-ports/scummvm_ios7_%.svg: originals/scummvm_logo.svg derivate/scummvm_ios_splash_template.svg
-	@export IOS_TEMPLATE_BEGIN=`awk 'BEGIN {c=1} /@SCUMMVM_LOGO@/{c=0} c==1{print $0}' derivate/scummvm_ios_splash_template.svg`; \
-	export IOS_TEMPLATE_END=`awk 'BEGIN {c=0} c==1{print $0} /@SCUMMVM_LOGO@/{c=1}' derivate/scummvm_ios_splash_template.svg`; \
-	export WIDTH=`echo $@ | sed 's/scummvm_ios7_\([0-9]*\).*$$/\1/'`; \
-	export HEIGHT=`echo $@ | sed 's/scummvm_ios7_[0-9]*x\([0-9]*\).*$$/\1/'`; \
-	if [ $$WIDTH -lt $$HEIGHT ]; then \
-		export LOGO_COVERAGE=1.196; \
-	else \
-		export LOGO_COVERAGE=0.87; \
-	fi; \
-	export LOGO_RATIO=4.315; \
-	export LOGO_WIDTH=`echo "scale=0; ($$LOGO_COVERAGE * $$WIDTH) / 1" | bc`; \
-	export LOGO_HEIGHT=`echo "scale=0; $$LOGO_WIDTH / $$LOGO_RATIO" | bc`; \
-	export LOGO_X=`echo "scale=0; ($$WIDTH - $$LOGO_WIDTH) / 2" | bc`; \
-	export LOGO_Y=`echo "scale=0; ($$HEIGHT - $$LOGO_HEIGHT) / 2" | bc`; \
-	echo $$IOS_TEMPLATE_BEGIN | sed \
-			-e "s/@WIDTH@/$$WIDTH/g" \
-			-e "s/@HEIGHT@/$$HEIGHT/g" \
-		-e "s/@LOGO_X@/$$LOGO_X/g" \
-		-e "s/@LOGO_Y@/$$LOGO_Y/g" \
-		-e "s/@LOGO_WIDTH@/$$LOGO_WIDTH/g" \
-		-e "s/@LOGO_HEIGHT@/$$LOGO_HEIGHT/g" >$@; \
-	grep -v '^<?xml' originals/scummvm_logo.svg | sed -e 's/width="[0-9]*px"//g' -e 's/height="[0-9]*px"//g' >>$@; \
-	echo $$IOS_TEMPLATE_END >>$@
-
-ports/scummvm_ios7_%.png: ports/scummvm_ios7_%.svg
-	convert $< $@
+ports/scummvm_ios7_%.png: scummvm_logo.png
+	convert $< -resize 640 -gravity Center -background $(BACKGROUND) -extent $* $@
 
 ports/scummvm_icon_dc.h: ports/scummvm_icon_dc.ico
 	echo "static const unsigned char scummvm_icon[] = {" > $@
@@ -183,8 +158,8 @@ ports/scummvm_icon_symbian64m.bmp: scummvm_icon.png
 ports/scummvm_iphone_icon_%.png: derivate/scummvm_iphone_icon.svg scummvm_icon.png
 	inkscape -e $@ -w $* -h $* $<
 
-ports/scummvm_iphone_loading.png: derivate/scummvm_iphone_loading.svg scummvm_logo.png
-	inkscape -e $@ $<
+ports/scummvm_iphone_loading.png: scummvm_logo.png
+	convert $< -resize 320 -gravity Center -background $(BACKGROUND) -extent 320x460 $@
 
 ports/scummvm_logo_psp.png: scummvm_logo.png
 	convert $< -resize 150 $@
