@@ -39,7 +39,8 @@ PORTS_IMAGES = \
 	ports/scummvm_bg_vita.png \
 	ports/scummvm_startup_vita.png \
 	ports/scummvm_icon_ds.bmp \
-	$(foreach letter, A B C D E F G H I J K, ports/scummvm_icon_ds_$(letter).bmp)
+	$(foreach letter, A B C D E F G H I J K, ports/scummvm_icon_ds_$(letter).bmp) \
+	$(foreach size, 480x800 240x400, ports/scummvm_bada_$(size).png)
 
 
 ICON_BIG = 512
@@ -209,6 +210,9 @@ ports/scummvm_icon_ds_%.bmp: scummvm_icon.png derivate/ds_overlay.png
 	convert -background none -gravity SouthEast -composite $@ $(word 2,$^) $@
 	convert $@ -background none +antialias -pointsize 8 label:$* -trim -geometry +1+1 -gravity SouthEast -composite $@
 
+ports/scummvm_bada_%.png: scummvm_logo.png
+	convert $< -resize $*\> -gravity center -background $(BACKGROUND) -extent $* $@
+
 ports: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ico scummvm_icon_32.png $(PORTS_IMAGES)
 
 update: ports
@@ -220,7 +224,9 @@ update: ports
 	cp scummvm_icon_128.png              $(SCUMMVM_PATH)/dists/androidsdl/scummvm/icon.png
 	cp ports/scummvm_icon_android_tv.png $(SCUMMVM_PATH)/dists/androidsdl/scummvm/banner.png
 
-# BADA TODO
+# BADA
+	cp ports/scummvm_bada_480x800.png    $(SCUMMVM_PATH)/dists/bada/icons/splash1.png
+	cp ports/scummvm_bada_240x400.png    $(SCUMMVM_PATH)/dists/bada/icons/splash2.png
 
 # GCW0
 	cp scummvm_icon_32.png               $(SCUMMVM_PATH)/dists/gcw0/scummvm.png
@@ -253,6 +259,7 @@ update: ports
 	cp ports/scummvm_icon_ds_G.bmp       $(SCUMMVM_PATH)/backends/platform/ds/logog.bmp
 	cp ports/scummvm_icon_ds_H.bmp       $(SCUMMVM_PATH)/backends/platform/ds/logoh.bmp
 	cp ports/scummvm_icon_ds_I.bmp       $(SCUMMVM_PATH)/backends/platform/ds/logoi.bmp
+	cp ports/scummvm_icon_ds_J.bmp       $(SCUMMVM_PATH)/backends/platform/ds/logoj.bmp
 	cp ports/scummvm_icon_ds_K.bmp       $(SCUMMVM_PATH)/backends/platform/ds/logok.bmp
 
 # Symbian
@@ -264,7 +271,6 @@ update: ports
 	cp ports/scummvm_icon_symbian32m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummLm.bmp
 	cp ports/scummvm_icon_symbian40.bmp  $(SCUMMVM_PATH)/backends/platform/symbian/res/scummLarge.bmp
 	cp ports/scummvm_icon_symbian40m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummLargeMask.bmp
-	cp originals/scummvm_icon.svg        $(SCUMMVM_PATH)/backends/platform/symbian/res/scummvm.svg
 	cp ports/scummvm_icon_symbian64.bmp  $(SCUMMVM_PATH)/backends/platform/symbian/res/scummxLarge.bmp
 	cp ports/scummvm_icon_symbian64m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummxLargeMask.bmp
 
@@ -276,20 +282,19 @@ update: ports
 	cp ports/scummvm_iphone_loading.png  $(SCUMMVM_PATH)/dists/iphone/Default.png
 	cp ports/scummvm_iphone_icon_60.png  $(SCUMMVM_PATH)/dists/iphone/icon.png
 	cp ports/scummvm_iphone_icon_72.png  $(SCUMMVM_PATH)/dists/iphone/icon-72.png
-	cp ports/scummvm_iphone_icon_114.png $(SCUMMVM_PATH)/dists/iphone/icon@2x.png
-	cp ports/scummvm_iphone_icon_29.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-29.png
-	cp ports/scummvm_iphone_icon_58.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-29@2x.png
-	cp ports/scummvm_iphone_icon_87.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-29@3x.png
-	cp ports/scummvm_iphone_icon_40.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-40.png
-	cp ports/scummvm_iphone_icon_80.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-40@2x.png
-	cp ports/scummvm_iphone_icon_120.png $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-40@3x.png
-	cp ports/scummvm_iphone_icon_60.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-60.png
-	cp ports/scummvm_iphone_icon_120.png $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-60@2x.png
-	cp ports/scummvm_iphone_icon_180.png $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-60-3x.png
-	cp ports/scummvm_iphone_icon_76.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-76.png
-	cp ports/scummvm_iphone_icon_152.png $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-76@2x.png
-	cp ports/scummvm_iphone_icon_167.png $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/icon4-83.5@2x.png
-	cp ports/scummvm_ios7_640x1136.png   $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/LaunchImage.launchimage/ScummVM-splash-640x1136.png
+	cp ports/scummvm_iphone_icon_114.png $(SCUMMVM_PATH)/dists/iphone/icon4.png
+	cp ports/scummvm_iphone_icon_29.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/AppIcon.appiconset/icon4-29.png
+	cp ports/scummvm_iphone_icon_58.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/AppIcon.appiconset/icon4-29@2x.png
+	cp ports/scummvm_iphone_icon_87.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/AppIcon.appiconset/icon4-29@3x.png
+	cp ports/scummvm_iphone_icon_40.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/AppIcon.appiconset/icon4-40.png
+	cp ports/scummvm_iphone_icon_80.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/AppIcon.appiconset/icon4-40@2x.png
+	cp ports/scummvm_iphone_icon_120.png $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/AppIcon.appiconset/icon4-40@3x.png
+	cp ports/scummvm_iphone_icon_120.png $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/AppIcon.appiconset/icon4-60@2x.png
+	cp ports/scummvm_iphone_icon_180.png $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/AppIcon.appiconset/icon4-60@3x.png
+	cp ports/scummvm_iphone_icon_76.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/AppIcon.appiconset/icon4-76.png
+	cp ports/scummvm_iphone_icon_152.png $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/AppIcon.appiconset/icon4-76@2x.png
+	cp ports/scummvm_iphone_icon_167.png $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/AppIcon.appiconset/icon4-83.5@2x.png
+	cp ports/scummvm_ios7_640x1136.png   $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/LaunchImage.launchimage/ScummVM-splash-640x1136-1.png
 	cp ports/scummvm_ios7_750x1334.png   $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/LaunchImage.launchimage/ScummVM-splash-750x1334.png
 	cp ports/scummvm_ios7_768x1024.png   $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/LaunchImage.launchimage/ScummVM-splash-768x1024.png
 	cp ports/scummvm_ios7_828x1792.png   $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/LaunchImage.launchimage/ScummVM-splash-828x1792.png
