@@ -224,12 +224,12 @@ ports/scummvm_startup_vita.png: scummvm_logo.png
 	convert $< -resize 270 -gravity center -background $(BACKGROUND) -extent 280x158 $@
 
 ports/scummvm_icon_ds.bmp: scummvm_icon.png
-	convert $< -resize 32 -background "#AED769" -flatten $@
+	convert $< -resize 32 -background "#AED769" -flatten -type Palette BMP3:$@
 
 ports/scummvm_icon_ds_%.bmp: scummvm_icon.png derivate/ds_overlay.png
 	convert $< -trim -resize x32 -background white -gravity west -extent 32x32 $@
 	convert -background none -gravity SouthEast -composite $@ $(word 2,$^) $@
-	convert $@ -background none +antialias -pointsize 8 label:$* -trim -geometry +1+1 -gravity SouthEast -composite $@
+	convert $@ -background none +antialias -pointsize 8 label:$* -trim -geometry +1+1 -gravity SouthEast -composite -type Palette BMP3:$@
 
 ports/scummvm_bada_%.png: scummvm_logo.png
 	convert $< -resize $*\> -gravity center -background $(BACKGROUND) -extent $* $@
