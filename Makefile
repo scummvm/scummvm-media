@@ -4,7 +4,7 @@ SCUMMVM_PATH = "../scummvm"
 BACKGROUND = "\#cc6600"
 
 REPOSITORY_IMAGES = \
-	$(foreach icon, scummvm_icon scummvm_tools_icon, $(foreach size, 16 32 64 128 512, $(icon)_$(size).png)) \
+	$(foreach icon, scummvm_icon scummvm_tools_icon, $(foreach size, 16 32 64 128 256 512 1024, $(icon)_$(size).png)) \
 	scummvm_icon.png \
 	scummvm_icon.xpm \
 	scummvm_icon.ico \
@@ -15,9 +15,6 @@ REPOSITORY_IMAGES = \
 
 PORTS_IMAGES = \
 	$(foreach size, 18 26 40 48 50 304, ports/scummvm_icon_$(size).png) \
-	ports/scummvm_icon_18.png \
-	ports/scummvm_icon_48.png \
-	ports/scummvm_icon_50.png \
 	ports/scummvm_icon_dc.h \
 	ports/scummvm_icon_dc.ico \
 	ports/scummvm_icon_moto32.png \
@@ -105,6 +102,27 @@ scummvm_logo.pdf: scummvm_logo.png
 
 scummvm_tools_icon_%.png: scummvm_tools_icon.png
 	convert $< -resize $*x$* $@
+
+# Mac
+mac: scummvm_icon.icns scummvm_tools_icon.icns
+
+scummvm_icon.iconset: scummvm_icon.png
+	mkdir $@
+	$(foreach size, 16 32 128 256 512, sips -z $(size) $(size) $< --out $@/icon_$(size)x$(size).png;)
+	$(foreach size, 32 64 256 512 1024, sips -z $(size) $(size) $< --out $@/icon_$(size)x$(size)@2x.png;)
+
+scummvm_tools_icon.iconset: scummvm_tools_icon.png
+	mkdir $@
+	$(foreach size, 16 32 128 256 512, sips -z $(size) $(size) $< --out $@/icon_$(size)x$(size).png;)
+	$(foreach size, 32 64 256 512 1024, sips -z $(size) $(size) $< --out $@/icon_$(size)x$(size)@2x.png;)
+
+scummvm_icon.icns: scummvm_icon.iconset
+	iconutil -c icns $<
+	rm -rf $<
+
+scummvm_tools_icon.icns: scummvm_tools_icon.iconset
+	iconutil -c icns $<
+	rm -rf $<
 
 # PORT SPECIFIC IMAGES
 ports/scummvm_icon_%.png: scummvm_icon.png
@@ -367,5 +385,7 @@ clean:
 
 clean-all: clean
 	rm -f $(REPOSITORY_IMAGES)
+	rm -f scummvm_icon.icns
+	rm -f scummvm_tools_icon.icns
 
 .PHONY: all clean clean-all update
