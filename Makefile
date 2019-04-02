@@ -19,6 +19,7 @@ PORTS_IMAGES = \
 	ports/scummvm_icon_48.png \
 	ports/scummvm_icon_50.png \
 	ports/scummvm_icon_dc.h \
+	ports/scummvm_icon_dc.ico \
 	ports/scummvm_icon_moto32.png \
 	ports/scummvm_icon_moto48.png \
 	$(foreach size, 16 18 32 40 64, ports/scummvm_icon_symbian$(size).bmp ports/scummvm_icon_symbian$(size)m.bmp) \
