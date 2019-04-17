@@ -356,9 +356,10 @@ update: ports
 	cp ports/scummvm_icon_ps3.png        $(SCUMMVM_PATH)/dists/ps3/ICON0.PNG
 
 # PS Vita
-	cp scummvm_icon_128.png              $(SCUMMVM_PATH)/dists/psp2/icon0.png
-	cp ports/scummvm_bg_vita.png         $(SCUMMVM_PATH)/dists/psp2/bg.png
-	cp ports/scummvm_startup_vita.png    $(SCUMMVM_PATH)/dists/psp2/startup.png
+# PS Vita icons and livearea images have to be processed with pngquant. Otherwise installation fails.
+	pngquant scummvm_icon_128.png --force --output $(SCUMMVM_PATH)/dists/psp2/icon0.png
+	pngquant ports/scummvm_bg_vita.png --force --output $(SCUMMVM_PATH)/dists/psp2/bg.png
+	pngquant ports/scummvm_startup_vita.png --force --output $(SCUMMVM_PATH)/dists/psp2/startup.png
 
 # Redhat
 	cp ports/scummvm_icon_48.png         $(SCUMMVM_PATH)/dists/redhat/scummvm48.png
