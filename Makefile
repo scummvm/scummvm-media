@@ -104,12 +104,16 @@ scummvm_tools_icon_%.png: scummvm_tools_icon.png
 	convert $< -resize $*x$* $@
 
 # Mac
-mac: scummvm_icon.icns scummvm_tools_icon.icns
+mac: scummvm_icon.icns scummvm_icon_legacy.icns scummvm_tools_icon.icns
 
 scummvm_icon.iconset: scummvm_icon.png
 	mkdir $@
 	$(foreach size, 16 32 128 256 512, sips -z $(size) $(size) $< --out $@/icon_$(size)x$(size).png;)
 	$(foreach size, 32 64 256 512 1024, sips -z $(size) $(size) $< --out $@/icon_$(size)x$(size)@2x.png;)
+
+scummvm_icon_legacy.iconset: scummvm_icon.png
+	mkdir $@
+	$(foreach size, 16 32 128 256 512, sips -z $(size) $(size) $< --out $@/icon_$(size)x$(size).png;)
 
 scummvm_tools_icon.iconset: scummvm_tools_icon.png
 	mkdir $@
@@ -117,6 +121,10 @@ scummvm_tools_icon.iconset: scummvm_tools_icon.png
 	$(foreach size, 32 64 256 512 1024, sips -z $(size) $(size) $< --out $@/icon_$(size)x$(size)@2x.png;)
 
 scummvm_icon.icns: scummvm_icon.iconset
+	iconutil -c icns $<
+	rm -rf $<
+
+scummvm_icon_legacy.icns: scummvm_icon_legacy.iconset
 	iconutil -c icns $<
 	rm -rf $<
 
