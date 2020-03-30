@@ -104,7 +104,11 @@ scummvm_tools_icon_%.png: scummvm_tools_icon.png
 	convert $< -resize $*x$* $@
 
 # Mac
-mac: scummvm_icon.icns scummvm_icon_legacy.icns scummvm_tools_icon.icns
+# The legacy icns generated with iconutil doesn't actually work properly on Mac OS X 10.5 (see bug #11261)
+# Instead it needs to be generated with Icon Composer on an old Mac (but the scummvm_icon_legacy.iconset
+# rule below can be used to generate the source png images for Icon Composer).
+#mac: scummvm_icon.icns scummvm_icon_legacy.icns scummvm_tools_icon.icns
+mac: scummvm_icon.icns scummvm_tools_icon.icns
 
 scummvm_icon.iconset: scummvm_icon.png
 	mkdir $@
