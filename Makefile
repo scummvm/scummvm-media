@@ -61,11 +61,11 @@ scummvm_icon.xpm: scummvm_icon.png
 
 scummvm_icon.ico: scummvm_icon.png
 	convert $< \
-		\( -clone 0 -resize 32x32 -colors 16 \) \
-		\( -clone 0 -resize 16x16 -colors 16 \) \
-		\( -clone 0 -resize 48x48 -colors 256 \) \
-		\( -clone 0 -resize 32x32 -colors 256 \) \
-		\( -clone 0 -resize 16x16 -colors 256 \) \
+		\( -clone 0 -resize 32x32 -depth 4 -colors 15 -alpha on \) \
+		\( -clone 0 -resize 16x16 -depth 4 -colors 15 -alpha on \) \
+		\( -clone 0 -resize 48x48 -depth 8 \) \
+		\( -clone 0 -resize 32x32 -depth 8 \) \
+		\( -clone 0 -resize 16x16 -depth 8 \) \
 		\( -clone 0 -resize 256x256 \) \
 		\( -clone 0 -resize 48x48 \) \
 		\( -clone 0 -resize 32x32 \) \
@@ -78,11 +78,11 @@ scummvm_tools_icon.png: scummvm_icon.png derivate/scummvm_tools_badge.svg
 
 scummvm_tools_icon.ico: scummvm_tools_icon.png
 	convert $< \
-		\( -clone 0 -resize 32x32 -colors 16 \) \
-		\( -clone 0 -resize 16x16 -colors 16 \) \
-		\( -clone 0 -resize 48x48 -colors 256 \) \
-		\( -clone 0 -resize 32x32 -colors 256 \) \
-		\( -clone 0 -resize 16x16 -colors 256 \) \
+		\( -clone 0 -resize 32x32 -depth 4 -colors 15 -alpha on \) \
+		\( -clone 0 -resize 16x16 -depth 4 -colors 15 -alpha on \) \
+		\( -clone 0 -resize 48x48 -depth 8 \) \
+		\( -clone 0 -resize 32x32 -depth 8 \) \
+		\( -clone 0 -resize 16x16 -depth 8 \) \
 		\( -clone 0 -resize 256x256 \) \
 		\( -clone 0 -resize 48x48 \) \
 		\( -clone 0 -resize 32x32 \) \
