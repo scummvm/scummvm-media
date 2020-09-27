@@ -14,7 +14,7 @@ REPOSITORY_IMAGES = \
 	scummvm_logo.pdf
 
 PORTS_IMAGES = \
-	$(foreach size, 18 26 40 48 50 304, ports/scummvm_icon_$(size).png) \
+	$(foreach size, 18 26 40 48 50 72 96 144 192 304, ports/scummvm_icon_$(size).png) \
 	ports/scummvm_icon_dc.h \
 	ports/scummvm_icon_dc.ico \
 	ports/scummvm_icon_moto32.png \
@@ -252,6 +252,11 @@ update: ports
 	cp ports/scummvm_logo_android.png    $(SCUMMVM_PATH)/dists/android/res/drawable/scummvm_big.png
 	cp ports/scummvm_icon_android_tv.png $(SCUMMVM_PATH)/dists/android/res/drawable-xhdpi/leanback_icon.png
 	cp ports/scummvm_icon_ouya.png       $(SCUMMVM_PATH)/dists/android/res/drawable-xhdpi/ouya_icon.png
+	cp ports/scummvm_icon_72.png         $(SCUMMVM_PATH)/dists/android/res/mipmap-hdpi/scummvm.png
+	cp ports/scummvm_icon_48.png         $(SCUMMVM_PATH)/dists/android/res/mipmap-mdpi/scummvm.png
+	cp ports/scummvm_icon_96.png         $(SCUMMVM_PATH)/dists/android/res/mipmap-xhdpi/scummvm.png
+	cp ports/scummvm_icon_144.png        $(SCUMMVM_PATH)/dists/android/res/mipmap-xxhdpi/scummvm.png
+	cp ports/scummvm_icon_192.png        $(SCUMMVM_PATH)/dists/android/res/mipmap-xxxhdpi/scummvm.png
 	cp scummvm_icon_128.png              $(SCUMMVM_PATH)/dists/androidsdl/scummvm/icon.png
 	cp ports/scummvm_icon_android_tv.png $(SCUMMVM_PATH)/dists/androidsdl/scummvm/banner.png
 
