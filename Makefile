@@ -36,6 +36,7 @@ PORTS_IMAGES = \
 	ports/scummvm_icon_ps3.png \
 	ports/scummvm_bg_vita.png \
 	ports/scummvm_startup_vita.png \
+	ports/scummvm_banner_ds.png \
 	ports/scummvm_icon_ds.bmp \
 	$(foreach letter, A B C D E F G H I J K, ports/scummvm_icon_ds_$(letter).bmp) \
 	$(foreach size, 480x800 240x400, ports/scummvm_bada_$(size).png)
@@ -233,6 +234,9 @@ ports/scummvm_bg_vita.png: scummvm_logo.png
 ports/scummvm_startup_vita.png: scummvm_logo.png
 	convert $< -resize 270 -gravity center -background $(BACKGROUND) -extent 280x158 $@
 
+ports/scummvm_banner_ds.png: scummvm_logo.png
+	convert $< -resize 200 -gravity center -background $(BACKGROUND) -extent 256x192 $@
+
 ports/scummvm_icon_ds.bmp: scummvm_icon.png
 	convert $< -resize 32 -background "#AED769" -flatten -type Palette BMP3:$@
 
@@ -285,6 +289,7 @@ update: ports
 	cp scummvm_icon_32.png               $(SCUMMVM_PATH)/backends/platform/dingux/scummvm.png
 
 # DS
+	cp ports/scummvm_banner_ds.png       $(SCUMMVM_PATH)/backends/platform/ds/gfx/banner.png
 	cp ports/scummvm_icon_ds.bmp         $(SCUMMVM_PATH)/backends/platform/ds/logo.bmp
 	cp ports/scummvm_icon_ds_A.bmp       $(SCUMMVM_PATH)/backends/platform/ds/logoa.bmp
 	cp ports/scummvm_icon_ds_B.bmp       $(SCUMMVM_PATH)/backends/platform/ds/logob.bmp
