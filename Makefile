@@ -14,7 +14,7 @@ REPOSITORY_IMAGES = \
 	scummvm_logo.pdf
 
 PORTS_IMAGES = \
-	$(foreach size, 18 26 40 48 50 72 96 144 192 304, ports/scummvm_icon_$(size).png) \
+	$(foreach size, 18 26 40 48 50 72 74 96 144 192 304, ports/scummvm_icon_$(size).png) \
 	ports/scummvm_icon_dc.h \
 	ports/scummvm_icon_dc.ico \
 	ports/scummvm_icon_moto32.png \
@@ -357,6 +357,9 @@ update: ports
 	cp scummvm_icon_64.png               $(SCUMMVM_PATH)/dists/maemo/scummvm64.png
 	cp ports/scummvm_icon_48.png         $(SCUMMVM_PATH)/dists/maemo/am-icon-48.png
 	cp scummvm_icon_512.png              $(SCUMMVM_PATH)/dists/maemo/scummvm.png
+
+# Miyoo Mini
+	cp ports/scummvm_icon_74.png         $(SCUMMVM_PATH)/dists/miyoo/scummvm-miyoomini.png
 
 # Moto
 	cp ports/scummvm_icon_moto48.png     $(SCUMMVM_PATH)/dists/motoezx/scummvm.png
