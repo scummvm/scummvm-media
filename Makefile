@@ -109,7 +109,7 @@ scummvm_tools_icon_%.png: scummvm_tools_icon.png
 #mac: scummvm_icon.icns scummvm_icon_legacy.icns scummvm_tools_icon.icns
 mac: scummvm_icon.icns scummvm_tools_icon.icns
 
-scummvm_icon.iconset: scummvm_icon.png
+scummvm_icon.iconset: scummvm_icon_mac.png
 	mkdir $@
 	$(foreach size, 16 32 128 256 512, sips -z $(size) $(size) $< --out $@/icon_$(size)x$(size).png;)
 	$(foreach size, 32 64 256 512 1024, sips -z $(size) $(size) $< --out $@/icon_$(size)x$(size)@2x.png;)
