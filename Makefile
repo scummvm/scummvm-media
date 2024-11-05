@@ -52,42 +52,42 @@ scummvm_icon.png: originals/scummvm_icon.png
 	cp $^ $@
 
 scummvm_icon_%.png: scummvm_icon.png
-	convert $< -resize $*x$* $@
+	magick $< -size $*x$* $@
 
 scummvm_icon_%.ico: scummvm_icon.png
-	convert $< -resize $*x$* $@
+	magick $< -size $*x$* $@
 
 scummvm_icon.xpm: scummvm_icon.png
-	convert $< -resize 32x32 -depth 4 xpm:- | sed -e 's/static /static const /' -e 's/xpm__/scummvm_icon/' > $@
+	magick $< -size 32x32 -depth 4 xpm:- | sed -e 's/static /static const /' -e 's/xpm__/scummvm_icon/' > $@
 
 scummvm_icon.ico: scummvm_icon.png
-	convert $< \
-		\( -clone 0 -resize 32x32 -depth 4 -colors 15 -alpha on \) \
-		\( -clone 0 -resize 16x16 -depth 4 -colors 15 -alpha on \) \
-		\( -clone 0 -resize 48x48 -depth 8 \) \
-		\( -clone 0 -resize 32x32 -depth 8 \) \
-		\( -clone 0 -resize 16x16 -depth 8 \) \
-		\( -clone 0 -resize 256x256 \) \
-		\( -clone 0 -resize 48x48 \) \
-		\( -clone 0 -resize 32x32 \) \
-		\( -clone 0 -resize 16x16 \) \
+	magick $< \
+		\( -clone 0 -size 32x32 -depth 4 -colors 15 -alpha on \) \
+		\( -clone 0 -size 16x16 -depth 4 -colors 15 -alpha on \) \
+		\( -clone 0 -size 48x48 -depth 8 \) \
+		\( -clone 0 -size 32x32 -depth 8 \) \
+		\( -clone 0 -size 16x16 -depth 8 \) \
+		\( -clone 0 -size 256x256 \) \
+		\( -clone 0 -size 48x48 \) \
+		\( -clone 0 -size 32x32 \) \
+		\( -clone 0 -size 16x16 \) \
 		-delete 0 \
 		$@
 
 scummvm_tools_icon.png: scummvm_icon.png derivate/scummvm_tools_badge.svg
-	convert -background none -gravity SouthEast -composite $^ $@
+	magick -background none -gravity SouthEast -composite $^ $@
 
 scummvm_tools_icon.ico: scummvm_tools_icon.png
-	convert $< \
-		\( -clone 0 -resize 32x32 -depth 4 -colors 15 -alpha on \) \
-		\( -clone 0 -resize 16x16 -depth 4 -colors 15 -alpha on \) \
-		\( -clone 0 -resize 48x48 -depth 8 \) \
-		\( -clone 0 -resize 32x32 -depth 8 \) \
-		\( -clone 0 -resize 16x16 -depth 8 \) \
-		\( -clone 0 -resize 256x256 \) \
-		\( -clone 0 -resize 48x48 \) \
-		\( -clone 0 -resize 32x32 \) \
-		\( -clone 0 -resize 16x16 \) \
+	magick $< \
+		\( -clone 0 -size 32x32 -depth 4 -colors 15 -alpha on \) \
+		\( -clone 0 -size 16x16 -depth 4 -colors 15 -alpha on \) \
+		\( -clone 0 -size 48x48 -depth 8 \) \
+		\( -clone 0 -size 32x32 -depth 8 \) \
+		\( -clone 0 -size 16x16 -depth 8 \) \
+		\( -clone 0 -size 256x256 \) \
+		\( -clone 0 -size 48x48 \) \
+		\( -clone 0 -size 32x32 \) \
+		\( -clone 0 -size 16x16 \) \
 		-delete 0 \
 		$@
 
@@ -95,12 +95,12 @@ scummvm_logo.png: originals/scummvm_logo.png
 	cp $^ $@
 
 scummvm_logo.pdf: scummvm_logo.png
-	convert $< $@
+	magick $< $@
 
 # TOOLS ICON
 
 scummvm_tools_icon_%.png: scummvm_tools_icon.png
-	convert $< -resize $*x$* $@
+	magick $< -size $*x$* $@
 
 # Mac
 # The legacy icns generated with iconutil doesn't actually work properly on Mac OS X 10.5 (see bug #11261)
@@ -137,10 +137,10 @@ scummvm_tools_icon.icns: scummvm_tools_icon.iconset
 
 # PORT SPECIFIC IMAGES
 ports/scummvm_icon_%.png: scummvm_icon.png
-	convert $< -resize $*x$* $@
+	magick $< -size $*x$* $@
 
 ports/scummvm_ios7_%.png: scummvm_logo.png
-	convert $< -resize 640 -gravity Center -background $(BACKGROUND) -extent $* $@
+	magick $< -size 640 -gravity Center -background $(BACKGROUND) -extent $* $@
 
 ports/scummvm_icon_dc.h: ports/scummvm_icon_dc.ico
 	echo "static const unsigned char scummvm_icon[] = {" > $@
@@ -149,104 +149,104 @@ ports/scummvm_icon_dc.h: ports/scummvm_icon_dc.ico
 
 #TODO: Validate that this works on DC
 ports/scummvm_icon_dc.ico: scummvm_icon.png
-	convert $< -resize 32x32 -colors 15 -depth 4 -alpha on $@
+	magick convert $< -resize 32x32 -colors 15 -depth 4 -alpha on $@
 
 ports/scummvm_icon_moto32.png: scummvm_icon.png
-	convert $< -resize 32x24 -gravity Center -background none -extent 32x24 $@
+	magick $< -size 32x24 -gravity Center -background none -extent 32x24 $@
 
 ports/scummvm_icon_moto48.png: scummvm_icon.png
-	convert $< -resize 48x32 -gravity Center -background none -extent 48x32 $@
+	magick $< -size 48x32 -gravity Center -background none -extent 48x32 $@
 
 ports/scummvm_icon_symbian16.bmp: scummvm_icon.png
-	convert $< -resize 16x16 -background black -flatten ppm:- | ppmtobmp - -bpp 24 > $@
+	magick $< -size 16x16 -background black -flatten ppm:- | ppmtobmp - -bpp 24 > $@
 
 ports/scummvm_icon_symbian16m.bmp: scummvm_icon.png
-	convert $< -resize 16x16 -alpha extract -threshold 0 -negate ppm:- | ppmtobmp - -bpp 4 > $@
+	magick $< -size 16x16 -alpha extract -threshold 0 -negate ppm:- | ppmtobmp - -bpp 4 > $@
 
 ports/scummvm_icon_symbian18.bmp: scummvm_icon.png
-	convert $< -resize 18x18 -background black -flatten ppm:- | ppmtobmp - -bpp 24 > $@
+	magick $< -size 18x18 -background black -flatten ppm:- | ppmtobmp - -bpp 24 > $@
 
 ports/scummvm_icon_symbian18m.bmp: scummvm_icon.png
-	convert $< -resize 18x18 -alpha extract -threshold 0 ppm:- | ppmtobmp - -bpp 4 > $@
+	magick $< -size 18x18 -alpha extract -threshold 0 ppm:- | ppmtobmp - -bpp 4 > $@
 
 ports/scummvm_icon_symbian32.bmp: scummvm_icon.png
-	convert $< -resize 32x32 -background black -flatten -colors 256 ppm:- | ppmtobmp - -bpp 8 > $@
+	magick $< -size 32x32 -background black -flatten -colors 256 ppm:- | ppmtobmp - -bpp 8 > $@
 
 ports/scummvm_icon_symbian32m.bmp: scummvm_icon.png
-	convert $< -resize 32x32 -alpha extract -threshold 0 -negate ppm:- | ppmtobmp - -bpp 4 > $@
+	magick $< -size 32x32 -alpha extract -threshold 0 -negate ppm:- | ppmtobmp - -bpp 4 > $@
 
 ports/scummvm_icon_symbian40.bmp: scummvm_icon.png
-	convert $< -resize 40x40 -background white -flatten ppm:- | ppmtobmp - -bpp 24 > $@
+	magick $< -size 40x40 -background white -flatten ppm:- | ppmtobmp - -bpp 24 > $@
 
 ports/scummvm_icon_symbian40m.bmp: scummvm_icon.png
-	convert $< -resize 40x40 -alpha extract -threshold 0 ppm:- | ppmtobmp - -bpp 4 > $@
+	magick $< -size 40x40 -alpha extract -threshold 0 ppm:- | ppmtobmp - -bpp 4 > $@
 
 ports/scummvm_icon_symbian64.bmp: scummvm_icon.png
-	convert $< -resize 64x64 -background white -flatten ppm:- | ppmtobmp - -bpp 24 > $@
+	magick $< -size 64x64 -background white -flatten ppm:- | ppmtobmp - -bpp 24 > $@
 
 ports/scummvm_icon_symbian64m.bmp: scummvm_icon.png
-	convert $< -resize 64x64 -alpha extract -threshold 0 ppm:- | ppmtobmp - -bpp 4 > $@
+	magick $< -size 64x64 -alpha extract -threshold 0 ppm:- | ppmtobmp - -bpp 4 > $@
 
 ports/scummvm_iphone_icon_%.png: derivate/scummvm_iphone_icon.svg scummvm_icon.png
 	inkscape -o $@ -w $* -h $* $<
 
 ports/scummvm_iphone_loading.png: scummvm_logo.png
-	convert $< -resize 320 -gravity Center -background $(BACKGROUND) -extent 320x460 $@
+	magick $< -size 320 -gravity Center -background $(BACKGROUND) -extent 320x460 $@
 
 ports/scummvm_logo_psp.png: scummvm_logo.png
-	convert $< -resize 150 $@
+	magick $< -size 150 $@
 
 ports/scummvm_logo_wii.png: scummvm_logo.png
-	convert $< -resize 128x48 -gravity center -background none -extent 128x48 $@
+	magick $< -size 128x48 -gravity center -background none -extent 128x48 $@
 
 ports/scummvm_wince_bar.bmp: ports/scummvm_wince_bar.png
-	@#TODO: Can 'convert' write indexed BMPs directly?
-	convert $< -colors 256 ppm:- | ppmtobmp - -bpp 8 > $@
+	@#TODO: Can 'magick' write indexed BMPs directly?
+	magick $< -colors 256 ppm:- | ppmtobmp - -bpp 8 > $@
 
 ports/scummvm_wince_bar.png: derivate/scummvm_wince_bar.svg
 	inkscape -o $@ $<
 
 ports/scummvm_logo_android.png: scummvm_logo.png
-	convert $< -resize 351 $@
+	magick $< -size 351 $@
 
 ports/scummvm_icon_android_tv.png: scummvm_logo.png
-	convert $< -resize 300 -gravity center -background $(BACKGROUND) -extent 320x180 $@
+	magick $< -size 300 -gravity center -background $(BACKGROUND) -extent 320x180 $@
 
 ports/scummvm_icon_ouya.png: scummvm_logo.png
-	convert $< -resize 732 -gravity center -background white -extent 732x214 $@
-	convert $@ -gravity center -background none -extent 732x412 $@
+	magick $< -size 732 -gravity center -background white -extent 732x214 $@
+	magick $@ -gravity center -background none -extent 732x412 $@
 
 ports/scummvm_icon_gph.png: scummvm_logo.png
-	convert $< -resize x57 -gravity center -background $(BACKGROUND) -extent 305x57 $@
+	magick $< -size x57 -gravity center -background $(BACKGROUND) -extent 305x57 $@
 
 ports/scummvm_banner_3ds.png: scummvm_logo.png
-	convert $< -resize 256 -gravity center -background none -extent 256x128 $@
+	magick $< -size 256 -gravity center -background none -extent 256x128 $@
 
 ports/scummvm_icon_3ds.png: scummvm_icon.png
-	convert $< -resize 48 -background $(BACKGROUND) -flatten $@
+	magick $< -size 48 -background $(BACKGROUND) -flatten $@
 
 ports/scummvm_icon_ps3.png: scummvm_logo.png
-	convert $< -resize 320 -gravity center -background none -extent 320x176 $@
+	magick $< -size 320 -gravity center -background none -extent 320x176 $@
 
 ports/scummvm_bg_vita.png: scummvm_logo.png
-	convert $< -resize 800 -gravity center -background $(BACKGROUND) -extent 840x500 $@
+	magick $< -size 800 -gravity center -background $(BACKGROUND) -extent 840x500 $@
 
 ports/scummvm_startup_vita.png: scummvm_logo.png
-	convert $< -resize 270 -gravity center -background $(BACKGROUND) -extent 280x158 $@
+	magick $< -size 270 -gravity center -background $(BACKGROUND) -extent 280x158 $@
 
 ports/scummvm_banner_ds.png: scummvm_logo.png
-	convert $< -resize 200 -gravity center -background $(BACKGROUND) -extent 256x192 $@
+	magick $< -size 200 -gravity center -background $(BACKGROUND) -extent 256x192 $@
 
 ports/scummvm_icon_ds.bmp: scummvm_icon.png
-	convert $< -resize 32 -background "#AED769" -flatten -type Palette BMP3:$@
+	magick $< -size 32 -background "#AED769" -flatten -type Palette BMP3:$@
 
 ports/scummvm_icon_ds_%.bmp: scummvm_icon.png derivate/ds_overlay.png
-	convert $< -trim -resize x32 -background white -gravity west -extent 32x32 $@
-	convert -background none -gravity SouthEast -composite $@ $(word 2,$^) $@
-	convert $@ -background none +antialias -pointsize 8 label:$* -trim -geometry +1+1 -gravity SouthEast -composite -type Palette BMP3:$@
+	magick $< -trim -size x32 -background white -gravity west -extent 32x32 $@
+	magick convert -background none -gravity SouthEast -composite $@ $(word 2,$^) $@
+	magick convert $@ -background none +antialias -pointsize 8 label:$* -trim -geometry +1+1 -gravity SouthEast -composite -type Palette BMP3:$@
 
 ports/scummvm_bada_%.png: scummvm_logo.png
-	convert $< -resize $*\> -gravity center -background $(BACKGROUND) -extent $* $@
+	magick $< -size $*\> -gravity center -background $(BACKGROUND) -extent $* $@
 
 ports: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ico scummvm_icon_32.png $(PORTS_IMAGES)
 
