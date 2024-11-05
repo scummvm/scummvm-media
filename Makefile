@@ -17,20 +17,14 @@ PORTS_IMAGES = \
 	$(foreach size, 18 26 40 48 50 72 74 96 144 192 304, ports/scummvm_icon_$(size).png) \
 	ports/scummvm_icon_dc.h \
 	ports/scummvm_icon_dc.ico \
-	ports/scummvm_icon_moto32.png \
-	ports/scummvm_icon_moto48.png \
-	$(foreach size, 16 18 32 40 64, ports/scummvm_icon_symbian$(size).bmp ports/scummvm_icon_symbian$(size)m.bmp) \
 	$(foreach size, 29 58 60 72 87 40 80 114 120 180 76 152 167, ports/scummvm_iphone_icon_$(size).png) \
 	ports/scummvm_iphone_loading.png \
 	$(foreach size, 640x1136 750x1334 768x1024 828x1792 1024x768 1125x2436 1242x2208 1242x2688 1536x2048 1792x828 2048x1536 2208x1242 2436x1125 2688x1242, ports/scummvm_ios7_$(size).png) \
 	ports/scummvm_logo_psp.png \
 	ports/scummvm_logo_wii.png \
-	ports/scummvm_wince_bar.bmp \
-	ports/scummvm_wince_bar.png \
 	ports/scummvm_logo_android.png \
 	ports/scummvm_icon_android_tv.png \
 	ports/scummvm_icon_ouya.png \
-	ports/scummvm_icon_gph.png \
 	ports/scummvm_banner_3ds.png \
 	ports/scummvm_icon_3ds.png \
 	ports/scummvm_icon_ps3.png \
@@ -38,8 +32,7 @@ PORTS_IMAGES = \
 	ports/scummvm_startup_vita.png \
 	ports/scummvm_banner_ds.png \
 	ports/scummvm_icon_ds.bmp \
-	$(foreach letter, A B C D E F G H I J K, ports/scummvm_icon_ds_$(letter).bmp) \
-	$(foreach size, 480x800 240x400, ports/scummvm_bada_$(size).png)
+	$(foreach letter, A B C D E F G H I J K, ports/scummvm_icon_ds_$(letter).bmp)
 
 
 ICON_BIG = 512
@@ -151,42 +144,6 @@ ports/scummvm_icon_dc.h: ports/scummvm_icon_dc.ico
 ports/scummvm_icon_dc.ico: scummvm_icon.png
 	magick convert $< -resize 32x32 -colors 15 -depth 4 -alpha on $@
 
-ports/scummvm_icon_moto32.png: scummvm_icon.png
-	magick $< -size 32x24 -gravity Center -background none -extent 32x24 $@
-
-ports/scummvm_icon_moto48.png: scummvm_icon.png
-	magick $< -size 48x32 -gravity Center -background none -extent 48x32 $@
-
-ports/scummvm_icon_symbian16.bmp: scummvm_icon.png
-	magick $< -size 16x16 -background black -flatten ppm:- | ppmtobmp - -bpp 24 > $@
-
-ports/scummvm_icon_symbian16m.bmp: scummvm_icon.png
-	magick $< -size 16x16 -alpha extract -threshold 0 -negate ppm:- | ppmtobmp - -bpp 4 > $@
-
-ports/scummvm_icon_symbian18.bmp: scummvm_icon.png
-	magick $< -size 18x18 -background black -flatten ppm:- | ppmtobmp - -bpp 24 > $@
-
-ports/scummvm_icon_symbian18m.bmp: scummvm_icon.png
-	magick $< -size 18x18 -alpha extract -threshold 0 ppm:- | ppmtobmp - -bpp 4 > $@
-
-ports/scummvm_icon_symbian32.bmp: scummvm_icon.png
-	magick $< -size 32x32 -background black -flatten -colors 256 ppm:- | ppmtobmp - -bpp 8 > $@
-
-ports/scummvm_icon_symbian32m.bmp: scummvm_icon.png
-	magick $< -size 32x32 -alpha extract -threshold 0 -negate ppm:- | ppmtobmp - -bpp 4 > $@
-
-ports/scummvm_icon_symbian40.bmp: scummvm_icon.png
-	magick $< -size 40x40 -background white -flatten ppm:- | ppmtobmp - -bpp 24 > $@
-
-ports/scummvm_icon_symbian40m.bmp: scummvm_icon.png
-	magick $< -size 40x40 -alpha extract -threshold 0 ppm:- | ppmtobmp - -bpp 4 > $@
-
-ports/scummvm_icon_symbian64.bmp: scummvm_icon.png
-	magick $< -size 64x64 -background white -flatten ppm:- | ppmtobmp - -bpp 24 > $@
-
-ports/scummvm_icon_symbian64m.bmp: scummvm_icon.png
-	magick $< -size 64x64 -alpha extract -threshold 0 ppm:- | ppmtobmp - -bpp 4 > $@
-
 ports/scummvm_iphone_icon_%.png: derivate/scummvm_iphone_icon.svg scummvm_icon.png
 	inkscape -o $@ -w $* -h $* $<
 
@@ -199,13 +156,6 @@ ports/scummvm_logo_psp.png: scummvm_logo.png
 ports/scummvm_logo_wii.png: scummvm_logo.png
 	magick $< -size 128x48 -gravity center -background none -extent 128x48 $@
 
-ports/scummvm_wince_bar.bmp: ports/scummvm_wince_bar.png
-	@#TODO: Can 'magick' write indexed BMPs directly?
-	magick $< -colors 256 ppm:- | ppmtobmp - -bpp 8 > $@
-
-ports/scummvm_wince_bar.png: derivate/scummvm_wince_bar.svg
-	inkscape -o $@ $<
-
 ports/scummvm_logo_android.png: scummvm_logo.png
 	magick $< -size 351 $@
 
@@ -215,9 +165,6 @@ ports/scummvm_icon_android_tv.png: scummvm_logo.png
 ports/scummvm_icon_ouya.png: scummvm_logo.png
 	magick $< -size 732 -gravity center -background white -extent 732x214 $@
 	magick $@ -gravity center -background none -extent 732x412 $@
-
-ports/scummvm_icon_gph.png: scummvm_logo.png
-	magick $< -size x57 -gravity center -background $(BACKGROUND) -extent 305x57 $@
 
 ports/scummvm_banner_3ds.png: scummvm_logo.png
 	magick $< -size 256 -gravity center -background none -extent 256x128 $@
@@ -245,9 +192,6 @@ ports/scummvm_icon_ds_%.bmp: scummvm_icon.png derivate/ds_overlay.png
 	magick convert -background none -gravity SouthEast -composite $@ $(word 2,$^) $@
 	magick convert $@ -background none +antialias -pointsize 8 label:$* -trim -geometry +1+1 -gravity SouthEast -composite -type Palette BMP3:$@
 
-ports/scummvm_bada_%.png: scummvm_logo.png
-	magick $< -size $*\> -gravity center -background $(BACKGROUND) -extent $* $@
-
 ports: scummvm_icon.ico scummvm_icon.xpm scummvm_icon_16.ico scummvm_icon_32.ico scummvm_icon_32.png $(PORTS_IMAGES)
 
 update: ports
@@ -261,19 +205,6 @@ update: ports
 	cp ports/scummvm_icon_96.png         $(SCUMMVM_PATH)/dists/android/res/mipmap-xhdpi/scummvm.png
 	cp ports/scummvm_icon_144.png        $(SCUMMVM_PATH)/dists/android/res/mipmap-xxhdpi/scummvm.png
 	cp ports/scummvm_icon_192.png        $(SCUMMVM_PATH)/dists/android/res/mipmap-xxxhdpi/scummvm.png
-	cp scummvm_icon_128.png              $(SCUMMVM_PATH)/dists/androidsdl/scummvm/icon.png
-	cp ports/scummvm_icon_android_tv.png $(SCUMMVM_PATH)/dists/androidsdl/scummvm/banner.png
-
-# BADA
-	cp ports/scummvm_bada_480x800.png    $(SCUMMVM_PATH)/dists/bada/icons/splash1.png
-	cp ports/scummvm_bada_240x400.png    $(SCUMMVM_PATH)/dists/bada/icons/splash2.png
-
-# GCW0
-	cp scummvm_icon_32.png               $(SCUMMVM_PATH)/dists/gcw0/scummvm.png
-
-# GPH
-	cp scummvm_icon_32.png               $(SCUMMVM_PATH)/dists/gph/scummvm.png
-	cp ports/scummvm_icon_gph.png        $(SCUMMVM_PATH)/dists/gph/scummvmb.png
 
 # DC
 	cp ports/scummvm_icon_dc.h           $(SCUMMVM_PATH)/backends/platform/dc/deficon.h
@@ -284,9 +215,6 @@ update: ports
 
 # PSP
 	cp ports/scummvm_logo_psp.png        $(SCUMMVM_PATH)/backends/platform/psp/icon0.png
-
-# Dingux
-	cp scummvm_icon_32.png               $(SCUMMVM_PATH)/backends/platform/dingux/scummvm.png
 
 # DS
 	cp ports/scummvm_banner_ds.png       $(SCUMMVM_PATH)/backends/platform/ds/gfx/banner.png
@@ -303,27 +231,7 @@ update: ports
 	cp ports/scummvm_icon_ds_J.bmp       $(SCUMMVM_PATH)/backends/platform/ds/logoj.bmp
 	cp ports/scummvm_icon_ds_K.bmp       $(SCUMMVM_PATH)/backends/platform/ds/logok.bmp
 
-# Symbian
-	cp ports/scummvm_icon_symbian16.bmp  $(SCUMMVM_PATH)/backends/platform/symbian/res/ScummS.bmp
-	cp ports/scummvm_icon_symbian16m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummSm.bmp
-	cp ports/scummvm_icon_symbian18.bmp  $(SCUMMVM_PATH)/backends/platform/symbian/res/ScummSmall.bmp
-	cp ports/scummvm_icon_symbian18m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummSmallMask.bmp
-	cp ports/scummvm_icon_symbian32.bmp  $(SCUMMVM_PATH)/backends/platform/symbian/res/scummL.bmp
-	cp ports/scummvm_icon_symbian32m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummLm.bmp
-	cp ports/scummvm_icon_symbian40.bmp  $(SCUMMVM_PATH)/backends/platform/symbian/res/scummLarge.bmp
-	cp ports/scummvm_icon_symbian40m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummLargeMask.bmp
-	cp ports/scummvm_icon_symbian64.bmp  $(SCUMMVM_PATH)/backends/platform/symbian/res/scummxLarge.bmp
-	cp ports/scummvm_icon_symbian64m.bmp $(SCUMMVM_PATH)/backends/platform/symbian/res/scummxLargeMask.bmp
-
-# WinCE
-	cp ports/scummvm_wince_bar.bmp       $(SCUMMVM_PATH)/backends/platform/wince/images/panelbig.bmp
-	cp scummvm_icon_32.ico               $(SCUMMVM_PATH)/backends/platform/wince/images/scumm_icon.ico
-
 # iOS 7
-	cp ports/scummvm_iphone_loading.png  $(SCUMMVM_PATH)/dists/iphone/Default.png
-	cp ports/scummvm_iphone_icon_60.png  $(SCUMMVM_PATH)/dists/iphone/icon.png
-	cp ports/scummvm_iphone_icon_72.png  $(SCUMMVM_PATH)/dists/iphone/icon-72.png
-	cp ports/scummvm_iphone_icon_114.png $(SCUMMVM_PATH)/dists/iphone/icon4.png
 	cp ports/scummvm_iphone_icon_29.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/AppIcon.appiconset/icon4-29.png
 	cp ports/scummvm_iphone_icon_58.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/AppIcon.appiconset/icon4-29@2x.png
 	cp ports/scummvm_iphone_icon_87.png  $(SCUMMVM_PATH)/dists/ios7/Images.xcassets/AppIcon.appiconset/icon4-29@3x.png
@@ -361,14 +269,6 @@ update: ports
 # Miyoo Mini
 	cp ports/scummvm_icon_74.png         $(SCUMMVM_PATH)/dists/miyoo/scummvm-miyoomini.png
 
-# Moto
-	cp ports/scummvm_icon_moto48.png     $(SCUMMVM_PATH)/dists/motoezx/scummvm.png
-	cp ports/scummvm_icon_moto32.png     $(SCUMMVM_PATH)/dists/motoezx/scummvm-sm.png
-	cp ports/scummvm_icon_48.png         $(SCUMMVM_PATH)/dists/motomagx/mgx/icon.png
-	cp ports/scummvm_icon_48.png         $(SCUMMVM_PATH)/dists/motomagx/mpkg/scummvm_usr.png
-	cp scummvm_icon_32.png               $(SCUMMVM_PATH)/dists/motomagx/pep/scummvm_big_usr.png
-	cp ports/scummvm_icon_18.png         $(SCUMMVM_PATH)/dists/motomagx/pep/scummvm_small_usr.png
-
 # OpenPandora
 	cp scummvm_icon_32.png               $(SCUMMVM_PATH)/dists/openpandora/icon/scummvm.png
 
@@ -389,9 +289,6 @@ update: ports
 
 # Samsung TV
 	cp ports/scummvm_icon_304.png        $(SCUMMVM_PATH)/dists/samsungtv/scummvm.png
-
-# WebOS
-	cp ports/scummvm_icon_48.png         $(SCUMMVM_PATH)/dists/webos/mojo/icon.png
 
 # Wii
 	cp ports/scummvm_logo_wii.png        $(SCUMMVM_PATH)/dists/wii/icon.png
