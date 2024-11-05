@@ -188,7 +188,7 @@ ports/scummvm_icon_symbian64m.bmp: scummvm_icon.png
 	convert $< -resize 64x64 -alpha extract -threshold 0 ppm:- | ppmtobmp - -bpp 4 > $@
 
 ports/scummvm_iphone_icon_%.png: derivate/scummvm_iphone_icon.svg scummvm_icon.png
-	inkscape -e $@ -w $* -h $* $<
+	inkscape -o $@ -w $* -h $* $<
 
 ports/scummvm_iphone_loading.png: scummvm_logo.png
 	convert $< -resize 320 -gravity Center -background $(BACKGROUND) -extent 320x460 $@
@@ -204,7 +204,7 @@ ports/scummvm_wince_bar.bmp: ports/scummvm_wince_bar.png
 	convert $< -colors 256 ppm:- | ppmtobmp - -bpp 8 > $@
 
 ports/scummvm_wince_bar.png: derivate/scummvm_wince_bar.svg
-	inkscape -e $@ $<
+	inkscape -o $@ $<
 
 ports/scummvm_logo_android.png: scummvm_logo.png
 	convert $< -resize 351 $@
