@@ -148,9 +148,11 @@ ports/scummvm_icon_dc.ico: scummvm_icon.png
 
 ports/scummvm_ios7_icon_%.png: derivate/scummvm_ios7_icon.svg scummvm_icon.png
 	inkscape -o $@ -w $* -h $* $<
+	magick $@ -alpha off $@
 
 ports/scummvm_ios7_tinted_icon_%.png: derivate/scummvm_ios7_tinted_icon.svg
 	inkscape -o $@ -w $* -h $* $<
+	magick $@ -alpha off $@
 
 ports/scummvm_ios7_dark_icon_%.png: derivate/scummvm_ios7_dark_icon.svg
 	inkscape -o $@ -w $* -h $* $<
